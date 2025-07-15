@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-charcoal;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-hive-gold rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-honey-bright;
+  }
+  
+  /* Selection colors */
+  ::selection {
+    @apply bg-hive-gold text-charcoal;
+  }
+}
+
+@layer components {
+  /* Hexagon shape utility */
+  .hexagon {
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  }
+  
+  /* Honeycomb grid pattern */
+  .honeycomb-grid {
+    background-image: 
+      repeating-linear-gradient(
+        30deg,
+        transparent,
+        transparent 35px,
+        rgba(218, 165, 32, 0.03) 35px,
+        rgba(218, 165, 32, 0.03) 70px
+      ),
+      repeating-linear-gradient(
+        -30deg,
+        transparent,
+        transparent 35px,
+        rgba(218, 165, 32, 0.03) 35px,
+        rgba(218, 165, 32, 0.03) 70px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 35px,
+        rgba(218, 165, 32, 0.03) 35px,
+        rgba(218, 165, 32, 0.03) 70px
+      );
+  }
+  
+  /* Honey drip effect */
+  .honey-drip {
+    position: relative;
+  }
+  
+  .honey-drip::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(to bottom, #FFBF00, #DAA520);
+    border-radius: 0 0 50% 50%;
+    animation: drip 3s ease-in-out infinite;
+  }
+  
+  /* Glass morphism with honey tint */
+  .glass-honey {
+    @apply backdrop-blur-md bg-white/10 border border-hive-gold/20;
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(90deg, 
+      #DAA520 0%, 
+      #DAA520 30%, 
+      #FFBF00 60%, 
+      rgba(255, 191, 0, 0.4) 90%, 
+      rgba(255, 191, 0, 0.3) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    line-height: 1.3;
+    padding-bottom: 0.2em;
+  }
+  
+  /* Hexagon button */
+  .hexagon-button {
+    @apply relative px-8 py-3 bg-gradient-to-r from-hive-gold to-honey-bright text-charcoal font-semibold transition-all duration-300;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+  }
+  
+  .hexagon-button:hover {
+    @apply scale-105 shadow-glow-honey;
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  .animate-honeycomb {
+    animation: honeycomb 20s ease-in-out infinite;
+  }
+  
+  .animate-drip {
+    animation: drip 3s ease-in-out infinite;
+  }
+  
+  .animate-buzz {
+    animation: buzz 0.5s ease-in-out;
+  }
+  
+  .animate-hexagon-rotate {
+    animation: hexagon-rotate 10s linear infinite;
+  }
+}
