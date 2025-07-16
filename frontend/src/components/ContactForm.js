@@ -5,18 +5,19 @@ const ContactForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
     message: '',
-    service: 'Connected AI Education'
+    service: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
 
   const services = [
-    'Connected AI Education',
-    'Collaborative Intelligence Training',
-    'Hive Intelligence Workshop',
-    'Custom Hive Solutions'
+    'The AI Level-Up',
+    'The AI-First Leader', 
+    'AI Discovery Workshop',
+    'AI Build Services'
   ];
 
   const handleChange = (e) => {
@@ -60,7 +61,7 @@ const ContactForm = ({ onClose }) => {
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
         transition={{ type: "spring", damping: 20, stiffness: 300 }}
-        className="contact-form-hexagon max-w-md w-full rounded-2xl p-8 relative"
+        className="bg-white max-w-md w-full rounded-2xl p-8 relative shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -68,7 +69,7 @@ const ContactForm = ({ onClose }) => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -76,52 +77,60 @@ const ContactForm = ({ onClose }) => {
         </motion.button>
 
         {/* Header */}
-        <div className="text-center mb-8">
-          <div className="text-3xl mb-2">🐝</div>
-          <h2 className="text-2xl font-bold gradient-text mb-2">
-            Start Your AI Hive
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-charcoal mb-2">
+            Get Started with AI
           </h2>
-          <p className="text-gray-400 text-sm">
-            Let's build connected intelligence for your business
-          </p>
         </div>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
-                Name *
-              </label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
-                placeholder="Your name"
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
-                Email *
-              </label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
-                placeholder="your@email.com"
-              />
-            </div>
+          <div>
+            <label className="block text-sm font-medium text-charcoal mb-2">
+              Name *
+            </label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-charcoal placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+              placeholder="Your full name"
+            />
+          </div>
+          
+          <div>
+            <label className="block text-sm font-medium text-charcoal mb-2">
+              Email *
+            </label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-charcoal placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+              placeholder="your@email.com"
+            />
+          </div>
+          
+          <div>
+            <label className="block text-sm font-medium text-charcoal mb-2">
+              Phone
+            </label>
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-charcoal placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+              placeholder="(555) 123-4567"
+            />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-charcoal mb-2">
               Company
             </label>
             <input
@@ -129,21 +138,22 @@ const ContactForm = ({ onClose }) => {
               name="company"
               value={formData.company}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
-              placeholder="Your company"
+              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-charcoal placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+              placeholder="Your company name"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-charcoal mb-2">
               Service Interest
             </label>
             <select
               name="service"
               value={formData.service}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
+              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-charcoal focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
             >
+              <option value="">Select a service</option>
               {services.map((service) => (
                 <option key={service} value={service}>
                   {service}
@@ -153,15 +163,16 @@ const ContactForm = ({ onClose }) => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
-              Message
+            <label className="block text-sm font-medium text-charcoal mb-2">
+              Message *
             </label>
             <textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
+              required
               rows={4}
-              className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
+              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-charcoal placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
               placeholder="Tell us about your AI goals and challenges..."
             />
           </div>
@@ -172,15 +183,15 @@ const ContactForm = ({ onClose }) => {
             disabled={isSubmitting}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full py-3 px-6 bg-gradient-to-r from-hive-gold to-honey-bright text-charcoal font-semibold rounded-lg hover:from-honey-bright hover:to-hive-gold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-3 px-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <div className="flex items-center justify-center">
-                <div className="hexagon-spinner mr-2" />
-                Connecting to Hive...
+                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                Sending...
               </div>
             ) : (
-              'Start Building Your Hive'
+              'Send Message'
             )}
           </motion.button>
         </form>
@@ -190,11 +201,11 @@ const ContactForm = ({ onClose }) => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mt-4 p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-center"
+            className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-center"
           >
-            <div className="text-2xl mb-2">🎉</div>
-            <p className="text-green-400">
-              Welcome to the hive! We'll be in touch soon.
+            <div className="text-2xl mb-2">✅</div>
+            <p className="text-green-600">
+              Thank you! We'll be in touch soon.
             </p>
           </motion.div>
         )}
@@ -203,9 +214,9 @@ const ContactForm = ({ onClose }) => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mt-4 p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-center"
+            className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg text-center"
           >
-            <p className="text-red-400">
+            <p className="text-red-600">
               Something went wrong. Please try again.
             </p>
           </motion.div>
