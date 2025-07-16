@@ -1,35 +1,118 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import logoTransparent from '../assets/logos/HiveStudio-logoTransparent.png';
-import horizontalLogo from '../assets/logos/HiveStudio-logoHorizontalTransparent.png';
 
-const BrandLogo = ({ className = '', size = 'default', variant = 'full', style = {} }) => {
-  const sizeClasses = {
-    small: 'h-10',
-    default: 'h-16',
-    large: 'h-20'
+const BrandLogo = ({ className = '', size = 'default', variant = 'horizontal', style = {} }) => {
+  const sizeConfig = {
+    small: { hexSize: 32, fontSize: 'text-xs', spacing: 'gap-2' },
+    default: { hexSize: 48, fontSize: 'text-lg', spacing: 'gap-3' },
+    large: { hexSize: 64, fontSize: 'text-2xl', spacing: 'gap-4' }
   };
 
-  const logoSrc = variant === 'horizontal' ? horizontalLogo : logoTransparent;
-  
-  // Use custom height if provided, otherwise use size classes
-  const heightClass = className.includes('h-full') ? 'h-full' : sizeClasses[size];
+  const config = sizeConfig[size];
+
+  // Hexagon path for SVG
+  const hexagonPath = `M ${config.hexSize * 0.25} 0 L ${config.hexSize * 0.75} 0 L ${config.hexSize} ${config.hexSize * 0.433} L ${config.hexSize * 0.75} ${config.hexSize * 0.866} L ${config.hexSize * 0.25} ${config.hexSize * 0.866} L 0 ${config.hexSize * 0.433} Z`;
 
   return (
     <motion.div
-      whileHover={{ scale: 1.05 }}
-      className={`flex items-center ${className}`}
+      className={`flex items-center ${config.spacing} ${className}`}
       style={style}
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
     >
-      <motion.img
-        src={logoSrc}
-        alt="Hive Studio AI Logo"
-        className={`${heightClass} w-auto`}
-        style={style}
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-      />
+      {/* Hexagon with AI */}
+      <motion.div
+        className="relative"
+        whileHover={{ 
+          scale: 1.1,
+          rotate: 360,
+        }}
+        transition={{ 
+          duration: 0.8,
+          ease: "easeInOut"
+        }}
+      >
+        <motion.svg
+          width={config.hexSize}
+          height={config.hexSize * 0.866}
+          viewBox={`0 0 ${config.hexSize} ${config.hexSize * 0.866}`}
+          className="drop-shadow-lg"
+        >
+          {/* Hexagon background with gradient */}
+          <defs>
+            <linearGradient id="hexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#DAA520" />
+              <stop offset="50%" stopColor="#FFBF00" />
+              <stop offset="100%" stopColor="#B8860B" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge> 
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          
+          <motion.path
+            d={hexagonPath}
+            fill="url(#hexGradient)"
+            stroke="#B8860B"
+            strokeWidth="2"
+            filter="url(#glow)"
+            whileHover={{
+              filter: "brightness(1.2)",
+            }}
+            transition={{ duration: 0.3 }}
+          />
+        </motion.svg>
+        
+        {/* AI Text centered in hexagon */}
+        <motion.div
+          className={`absolute inset-0 flex items-center justify-center font-bold text-charcoal ${
+            size === 'small' ? 'text-xs' : size === 'large' ? 'text-xl' : 'text-base'
+          }`}
+          whileHover={{
+            textShadow: "0 0 8px rgba(218, 165, 32, 0.8)"
+          }}
+          transition={{ duration: 0.3 }}
+        >
+          AI
+        </motion.div>
+      </motion.div>
+
+      {/* HIVE STUDIO Text */}
+      <motion.div
+        className="flex flex-col leading-tight"
+        whileHover={{ x: 5 }}
+        transition={{ duration: 0.3 }}
+      >
+        <motion.span
+          className={`font-bold text-charcoal ${
+            size === 'small' ? 'text-sm' : size === 'large' ? 'text-xl' : 'text-lg'
+          }`}
+          whileHover={{
+            background: "linear-gradient(45deg, #DAA520, #FFBF00)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+          transition={{ duration: 0.3 }}
+        >
+          HIVE
+        </motion.span>
+        <motion.span
+          className={`font-medium text-charcoal-light ${
+            size === 'small' ? 'text-xs' : size === 'large' ? 'text-lg' : 'text-base'
+          }`}
+          whileHover={{
+            color: "#DAA520"
+          }}
+          transition={{ duration: 0.3 }}
+        >
+          STUDIO
+        </motion.span>
+      </motion.div>
     </motion.div>
   );
 };
