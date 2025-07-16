@@ -248,7 +248,7 @@ const App = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-xl sm:text-2xl text-charcoal-light max-w-4xl mx-auto leading-relaxed"
               >
-                Transform AI curiosity into competitive advantage with practical implementation that delivers measurable business results.
+                Transform AI curiosity into competitive advantage with practical implementations that deliver measurable business results.
               </motion.p>
             </div>
 
