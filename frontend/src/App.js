@@ -457,22 +457,24 @@ const App = () => {
         <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 z-10">
           <motion.div 
-            className="w-full h-96 bg-gradient-to-br from-hive-gold/20 to-honey-bright/20 rounded-2xl shadow-hexagon mb-12 flex items-center justify-center relative overflow-hidden"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
+            className="mb-12 flex items-center justify-center"
           >
-            <div className="relative z-10 flex items-center justify-center">
-              <motion.img
-                src={logoTransparent}
-                alt="Hive Studio AI Logo"
-                className="h-64 w-auto opacity-80"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 0.8, scale: 1 }}
-                whileHover={{ opacity: 1, scale: 1.05 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              />
-            </div>
+            <motion.img
+              src={logoTransparent}
+              alt="Hive Studio AI Logo"
+              className="h-80 w-auto"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              whileHover={{ 
+                scale: 1.1,
+                filter: "drop-shadow(0 0 30px rgba(218, 165, 32, 0.8)) drop-shadow(0 0 60px rgba(255, 191, 0, 0.6))"
+              }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              style={{
+                filter: "drop-shadow(0 0 20px rgba(218, 165, 32, 0.3))"
+              }}
+            />
           </motion.div>
           <motion.h2 
             className="text-4xl md:text-5xl font-bold mb-6 gradient-text"
