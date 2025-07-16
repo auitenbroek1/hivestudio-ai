@@ -291,7 +291,7 @@ const LearnMoreModal = ({ onClose }) => {
                 Ready to build your connected intelligence hive?
               </p>
               <p className="text-gray-400 text-xs">
-                Contact Aaron at aaron@hivestudio.ai
+                Contact us at sales@hivestudio.ai
               </p>
             </div>
             <motion.button

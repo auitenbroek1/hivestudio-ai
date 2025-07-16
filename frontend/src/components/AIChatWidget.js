@@ -19,7 +19,7 @@ const AIChatWidget = () => {
     'hello': "Hello! Welcome to Hive Studio. I'm here to help you explore how connected AI can work for your business.",
     'services': "We offer four main services: Connected AI Education, Collaborative Intelligence Training, Hive Intelligence Workshop, and Custom Hive Solutions. Which one interests you most?",
     'pricing': "Our pricing depends on the scope and complexity of your needs. I'd recommend scheduling a consultation to discuss your specific requirements and get a custom quote.",
-    'contact': "You can reach Aaron at aaron@hivestudio.ai or use our contact form. Would you like me to help you get started with that?",
+    'contact': "You can reach us at sales@hivestudio.ai or use our contact form. Would you like me to help you get started with that?",
     'ai': "AI at Hive Studio is all about connected intelligence - systems that work together like a hive rather than isolated tools. This collaborative approach delivers much better results.",
     'default': "That's a great question! For detailed information about that topic, I'd recommend connecting with Aaron directly. He has decades of experience and can provide specific insights for your situation."
   };

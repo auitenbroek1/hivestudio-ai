@@ -545,7 +545,7 @@ const App = () => {
                   LinkedIn
                 </motion.a>
                 <motion.a
-                  href="mailto:aaron@hivestudio.ai"
+                  href="mailto:sales@hivestudio.ai"
                   whileHover={{ scale: 1.1 }}
                   className="text-hive-gold hover:text-honey-bright transition-colors"
                 >
@@ -564,8 +564,8 @@ const App = () => {
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4 text-hive-gold">Contact</h4>
-              <p className="text-gray-300 mb-2">aaron@hivestudio.ai</p>
-              <p className="text-gray-300 mb-2">Central Iowa, USA</p>
+              <p className="text-gray-300 mb-2">sales@hivestudio.ai</p>
+              <p className="text-gray-300 mb-2">Des Moines, IA USA</p>
               <p className="text-gray-300">https://hivestudio.ai</p>
             </div>
           </div>
