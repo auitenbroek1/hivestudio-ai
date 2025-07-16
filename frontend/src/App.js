@@ -570,7 +570,7 @@ const App = () => {
             </div>
           </div>
           <div className="border-t border-hive-gold/30 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2025 Hive Studio AI. All rights reserved. Built with connected intelligence.</p>
+            <p>&copy; 2025 Hive Studio AI. All rights reserved. Built with AI-powered development.</p>
           </div>
         </div>
       </footer>
