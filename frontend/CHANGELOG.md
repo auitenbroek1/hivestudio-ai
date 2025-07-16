@@ -5,6 +5,31 @@ All notable changes to the Hive Studio AI website will be documented in this fil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2025-01-16 - **STABLE RELEASE** ✅
+
+### Deployment Fixes & Stability
+- **Fixed Vercel deployment configuration** - resolved build failures
+- **Corrected Root Directory setting** to `frontend` in Vercel
+- **Fixed missing public files** - removed `public` from `.gitignore`
+- **Verified working deployment** with automatic GitHub integration
+- **Confirmed all features working** on production site
+
+### Content Updates  
+- **Hero text correction** - "implementations" (plural) for grammatical accuracy
+- **Contact form brand styling** - dark theme with hive gold accents and hexagon buttons
+- **Contact information updates** - sales@hivestudio.ai and Des Moines, IA USA
+
+### Technical Stability
+- **Vercel framework** correctly set to Create React App (not Vite)
+- **Build process** using `npm run build` → `craco build` successfully
+- **Domain configuration** optimized with recommended DNS settings
+- **All documentation** updated to reflect current production state
+
+**Status**: ✅ **PRODUCTION READY** - Fully deployed and verified working
+**Live Site**: https://hivestudio.ai
+
+---
+
 ## [1.0.0] - 2025-01-16
 
 ### Added
