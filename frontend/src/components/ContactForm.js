@@ -61,7 +61,7 @@ const ContactForm = ({ onClose }) => {
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
         transition={{ type: "spring", damping: 20, stiffness: 300 }}
-        className="bg-white max-w-md w-full rounded-2xl p-8 relative shadow-xl"
+        className="bg-charcoal/95 backdrop-blur-md max-w-md w-full rounded-2xl p-8 relative shadow-hexagon border border-hive-gold/30"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -69,7 +69,7 @@ const ContactForm = ({ onClose }) => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+          className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -78,7 +78,7 @@ const ContactForm = ({ onClose }) => {
 
         {/* Header */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-charcoal mb-2">
+          <h2 className="text-2xl font-bold gradient-text mb-2">
             Get Started with AI
           </h2>
         </div>
@@ -86,7 +86,7 @@ const ContactForm = ({ onClose }) => {
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-charcoal mb-2">
+            <label className="block text-sm font-medium text-white mb-2">
               Name *
             </label>
             <input
@@ -95,13 +95,13 @@ const ContactForm = ({ onClose }) => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-charcoal placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+              className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
               placeholder="Your full name"
             />
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-charcoal mb-2">
+            <label className="block text-sm font-medium text-white mb-2">
               Email *
             </label>
             <input
@@ -110,13 +110,13 @@ const ContactForm = ({ onClose }) => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-charcoal placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+              className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
               placeholder="your@email.com"
             />
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-charcoal mb-2">
+            <label className="block text-sm font-medium text-white mb-2">
               Phone
             </label>
             <input
@@ -124,13 +124,13 @@ const ContactForm = ({ onClose }) => {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-charcoal placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+              className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
               placeholder="(555) 123-4567"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-charcoal mb-2">
+            <label className="block text-sm font-medium text-white mb-2">
               Company
             </label>
             <input
@@ -138,20 +138,20 @@ const ContactForm = ({ onClose }) => {
               name="company"
               value={formData.company}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-charcoal placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+              className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
               placeholder="Your company name"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-charcoal mb-2">
+            <label className="block text-sm font-medium text-white mb-2">
               Service Interest
             </label>
             <select
               name="service"
               value={formData.service}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-charcoal focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+              className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
             >
               <option value="">Select a service</option>
               {services.map((service) => (
@@ -163,7 +163,7 @@ const ContactForm = ({ onClose }) => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-charcoal mb-2">
+            <label className="block text-sm font-medium text-white mb-2">
               Message *
             </label>
             <textarea
@@ -172,7 +172,7 @@ const ContactForm = ({ onClose }) => {
               onChange={handleChange}
               required
               rows={4}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-charcoal placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+              className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
               placeholder="Tell us about your AI goals and challenges..."
             />
           </div>
@@ -183,7 +183,7 @@ const ContactForm = ({ onClose }) => {
             disabled={isSubmitting}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full py-3 px-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="hexagon-button w-full text-lg honey-glow disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <div className="flex items-center justify-center">
