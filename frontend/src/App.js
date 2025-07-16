@@ -305,7 +305,11 @@ const App = () => {
                 data-service-id={service.id}
                 initial={{ opacity: 0, y: 50 }}
                 animate={servicesInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: index * 0.1,
+                  scale: { type: "spring", stiffness: 400, damping: 10 }
+                }}
                 whileHover={{ scale: 1.05 }}
                 onHoverStart={() => setHoveredService(service.id)}
                 onHoverEnd={() => setHoveredService(null)}
