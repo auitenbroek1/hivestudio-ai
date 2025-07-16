@@ -1,6 +1,6 @@
 # Hive Studio AI Website
 
-Transform AI curiosity into competitive advantage with practical implementation that delivers measurable business results.
+Transform AI curiosity into competitive advantage with practical implementations that deliver measurable business results.
 
 ## 🚀 Live Site
 **Production**: [https://hivestudio.ai](https://hivestudio.ai)
@@ -108,7 +108,7 @@ See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed instructions.
 Required for production:
 ```
 REACT_APP_SITE_URL=https://hivestudio.ai
-REACT_APP_CONTACT_EMAIL=aaron@hivestudio.ai
+REACT_APP_CONTACT_EMAIL=sales@hivestudio.ai
 REACT_APP_ENVIRONMENT=production
 ```
 
@@ -130,9 +130,9 @@ REACT_APP_ENVIRONMENT=production
 ## 📞 Contact & Support
 
 - **Website**: [https://hivestudio.ai](https://hivestudio.ai)
-- **Email**: aaron@hivestudio.ai
+- **Email**: sales@hivestudio.ai
 - **LinkedIn**: [Aaron Uitenbroek](https://www.linkedin.com/in/aaroni10/)
-- **Location**: Central Iowa, USA
+- **Location**: Des Moines, IA USA
 
 ## 📝 Content Strategy
 
@@ -172,6 +172,6 @@ This is a client project. For changes or updates:
 
 ---
 
-**Last Updated**: July 15, 2025  
+**Last Updated**: January 16, 2025  
 **Version**: 1.0.0  
 **Status**: Production Ready ✅

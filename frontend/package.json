@@ -1,6 +1,7 @@
 {
   "name": "hivestudio-ai-frontend",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Hive Studio AI - Transform AI curiosity into competitive advantage with practical implementations that deliver measurable business results.",
   "private": true,
   "homepage": ".",
   "dependencies": {
