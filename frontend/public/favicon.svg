@@ -1,0 +1,54 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#DAA520;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
+    </linearGradient>
+    <filter id="goldTexture">
+      <feTurbulence baseFrequency="0.9" numOctaves="4" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0.5 0.6 0.7 0.8"/>
+      </feComponentTransfer>
+      <feComposite operator="multiply" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  
+  <!-- Main Hexagon -->
+  <path d="M50 60 L150 60 L175 100 L150 140 L50 140 L25 100 Z" 
+        fill="url(#goldGradient)" 
+        stroke="url(#goldGradient)" 
+        stroke-width="3"
+        filter="url(#goldTexture)"/>
+  
+  <!-- Inner Hexagon (white center) -->
+  <path d="M60 70 L140 70 L160 100 L140 130 L60 130 L40 100 Z" 
+        fill="#FFFFFF"/>
+  
+  <!-- AI Text -->
+  <text x="100" y="110" 
+        font-family="Arial, sans-serif" 
+        font-size="32" 
+        font-weight="bold" 
+        text-anchor="middle" 
+        fill="url(#goldGradient)">AI</text>
+  
+  <!-- Honey Drips -->
+  <!-- Center drip -->
+  <path d="M100 140 Q100 150 100 160 Q105 165 100 170 Q95 165 100 160 Q100 150 100 140" 
+        fill="url(#goldGradient)"/>
+  
+  <!-- Left drip -->
+  <path d="M85 145 Q85 152 85 158 Q88 162 85 165 Q82 162 85 158 Q85 152 85 145" 
+        fill="url(#goldGradient)"/>
+  
+  <!-- Right drip -->
+  <path d="M115 145 Q115 152 115 158 Q118 162 115 165 Q112 162 115 158 Q115 152 115 145" 
+        fill="url(#goldGradient)"/>
+  
+  <!-- Smaller drops -->
+  <circle cx="100" cy="175" r="2" fill="url(#goldGradient)"/>
+  <circle cx="85" cy="170" r="1.5" fill="url(#goldGradient)"/>
+  <circle cx="115" cy="170" r="1.5" fill="url(#goldGradient)"/>
+</svg>
