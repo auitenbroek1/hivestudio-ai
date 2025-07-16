@@ -461,9 +461,17 @@ const App = () => {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="relative z-10 text-center">
-              <div className="text-8xl mb-4 animate-float">🐝</div>
-              <h3 className="text-2xl font-bold gradient-text">Ready to Transform Your Business?</h3>
+            <div className="relative z-10 flex items-center justify-center">
+              <motion.img
+                src={logoTransparent}
+                alt="Hive Studio AI Logo"
+                className="h-64 w-auto opacity-80"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 0.8, scale: 1 }}
+                whileHover={{ opacity: 1, scale: 1.05 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              />
             </div>
           </motion.div>
           <motion.h2 
