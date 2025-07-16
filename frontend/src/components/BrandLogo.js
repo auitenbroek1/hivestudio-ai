@@ -84,13 +84,13 @@ const BrandLogo = ({ className = '', size = 'default', variant = 'horizontal', s
 
       {/* HIVE STUDIO Text */}
       <motion.div
-        className="flex flex-col leading-tight"
+        className="flex items-center gap-1"
         whileHover={{ x: 5 }}
         transition={{ duration: 0.3 }}
       >
         <motion.span
-          className={`font-bold text-charcoal ${
-            size === 'small' ? 'text-sm' : size === 'large' ? 'text-xl' : 'text-lg'
+          className={`font-extrabold text-charcoal ${
+            size === 'small' ? 'text-lg' : size === 'large' ? 'text-3xl' : 'text-2xl'
           }`}
           whileHover={{
             background: "linear-gradient(45deg, #DAA520, #FFBF00)",
@@ -102,8 +102,8 @@ const BrandLogo = ({ className = '', size = 'default', variant = 'horizontal', s
           HIVE
         </motion.span>
         <motion.span
-          className={`font-medium text-charcoal-light ${
-            size === 'small' ? 'text-xs' : size === 'large' ? 'text-lg' : 'text-base'
+          className={`font-bold text-charcoal-light ${
+            size === 'small' ? 'text-lg' : size === 'large' ? 'text-3xl' : 'text-2xl'
           }`}
           whileHover={{
             color: "#DAA520"
