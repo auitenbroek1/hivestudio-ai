@@ -162,8 +162,8 @@ const App = () => {
           alt=""
           className="w-auto h-auto"
           style={{
-            maxHeight: '90vh',
-            maxWidth: '90vw',
+            maxHeight: '150vh',
+            maxWidth: '150vw',
             opacity: 0.15,
             objectFit: 'contain'
           }}
