@@ -535,7 +535,7 @@ const App = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Schedule a free consultation and discover how AI can drive measurable results for your organization.
+            Discover how AI can drive measurable results for your organization.
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -550,7 +550,7 @@ const App = () => {
               whileTap={{ scale: 0.95 }}
               className="hexagon-button text-lg px-10 py-4 honey-glow"
             >
-              Schedule Free Consultation
+              Start Your AI Journey
             </motion.button>
             <motion.button
               onClick={() => setIsLearnMoreOpen(true)}
