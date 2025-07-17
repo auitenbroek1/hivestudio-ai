@@ -523,25 +523,11 @@ const App = () => {
               className="h-80 w-auto"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={!device.isMobileDevice ? { 
+              whileHover={{ 
                 scale: 1.1,
                 filter: "drop-shadow(0 0 30px rgba(218, 165, 32, 0.8)) drop-shadow(0 0 60px rgba(255, 191, 0, 0.6))"
-              } : {}}
-              animate={device.isMobileDevice && ctaInView ? {
-                filter: [
-                  "drop-shadow(0 0 20px rgba(218, 165, 32, 0.3)) brightness(1)",
-                  "drop-shadow(0 0 30px rgba(218, 165, 32, 0.8)) drop-shadow(0 0 60px rgba(255, 191, 0, 0.6)) brightness(1)",
-                  "drop-shadow(0 0 30px rgba(218, 165, 32, 0.8)) drop-shadow(0 0 60px rgba(255, 191, 0, 0.6)) brightness(1)",
-                  "drop-shadow(0 0 20px rgba(218, 165, 32, 0.3)) brightness(1)"
-                ],
-                scale: [1, 1.05, 1.05, 1]
-              } : {}}
-              transition={device.isMobileDevice && ctaInView ? {
-                duration: 4,
-                delay: 0.5,
-                ease: "easeInOut",
-                times: [0, 0.25, 0.75, 1]
-              } : { duration: 0.6 }}
+              }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               style={{
                 filter: "drop-shadow(0 0 20px rgba(218, 165, 32, 0.3))"
