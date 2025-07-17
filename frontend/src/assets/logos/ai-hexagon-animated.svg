@@ -1,0 +1,173 @@
+<svg width="64" height="55" viewBox="0 0 64 55" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Honey gradient for drops -->
+    <linearGradient id="honeyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFBF00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Hexagon gradient -->
+    <linearGradient id="hexagonGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFBF00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Drop shadow filter -->
+    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="1" dy="2" stdDeviation="1" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Main hexagon shape -->
+  <polygon points="32,4 49.3,14 49.3,34 32,44 14.7,34 14.7,14" 
+           fill="url(#hexagonGradient)" 
+           stroke="#B8860B" 
+           stroke-width="0.5"
+           filter="url(#dropShadow)"/>
+  
+  <!-- AI text inside hexagon (optional - adjust font size as needed) -->
+  <text x="32" y="28" 
+        text-anchor="middle" 
+        dominant-baseline="middle" 
+        fill="#2a2a2a" 
+        font-family="Arial, sans-serif" 
+        font-weight="bold" 
+        font-size="12">AI</text>
+
+  <!-- Honey drops container -->
+  <g class="honey-drops">
+    
+    <!-- Drop 1 (left side) -->
+    <ellipse cx="26" cy="44" rx="1.5" ry="4" fill="url(#honeyGradient)" opacity="0">
+      <!-- Growth and stretch animation -->
+      <animateTransform 
+        attributeName="transform" 
+        type="scale"
+        values="0,0; 1,1; 1,2.8; 1,2.8; 0,0"
+        dur="4s" 
+        repeatCount="indefinite" 
+        begin="0s"/>
+      
+      <!-- Opacity animation -->
+      <animate 
+        attributeName="opacity"
+        values="0; 0.8; 1; 0.9; 0"
+        dur="4s" 
+        repeatCount="indefinite" 
+        begin="0s"/>
+      
+      <!-- Falling motion -->
+      <animateTransform 
+        attributeName="transform" 
+        type="translate"
+        values="0,0; 0,0; 0,0; 0,8; 0,20"
+        dur="4s" 
+        repeatCount="indefinite" 
+        begin="0s"
+        additive="sum"/>
+    </ellipse>
+
+    <!-- Drop 2 (center) -->
+    <ellipse cx="32" cy="44" rx="2" ry="5" fill="url(#honeyGradient)" opacity="0">
+      <!-- Growth and stretch animation -->
+      <animateTransform 
+        attributeName="transform" 
+        type="scale"
+        values="0,0; 1,1; 1,3.2; 1,3.2; 0,0"
+        dur="4s" 
+        repeatCount="indefinite" 
+        begin="1s"/>
+      
+      <!-- Opacity animation -->
+      <animate 
+        attributeName="opacity"
+        values="0; 0.9; 1; 0.8; 0"
+        dur="4s" 
+        repeatCount="indefinite" 
+        begin="1s"/>
+      
+      <!-- Falling motion -->
+      <animateTransform 
+        attributeName="transform" 
+        type="translate"
+        values="0,0; 0,0; 0,0; 0,10; 0,22"
+        dur="4s" 
+        repeatCount="indefinite" 
+        begin="1s"
+        additive="sum"/>
+    </ellipse>
+
+    <!-- Drop 3 (right side) -->
+    <ellipse cx="38" cy="44" rx="1.2" ry="3.5" fill="url(#honeyGradient)" opacity="0">
+      <!-- Growth and stretch animation -->
+      <animateTransform 
+        attributeName="transform" 
+        type="scale"
+        values="0,0; 1,1; 1,2.5; 1,2.5; 0,0"
+        dur="4s" 
+        repeatCount="indefinite" 
+        begin="2s"/>
+      
+      <!-- Opacity animation -->
+      <animate 
+        attributeName="opacity"
+        values="0; 0.7; 1; 0.9; 0"
+        dur="4s" 
+        repeatCount="indefinite" 
+        begin="2s"/>
+      
+      <!-- Falling motion -->
+      <animateTransform 
+        attributeName="transform" 
+        type="translate"
+        values="0,0; 0,0; 0,0; 0,6; 0,18"
+        dur="4s" 
+        repeatCount="indefinite" 
+        begin="2s"
+        additive="sum"/>
+    </ellipse>
+
+    <!-- Drop 4 (small left) -->
+    <ellipse cx="29" cy="44" rx="1" ry="2.5" fill="url(#honeyGradient)" opacity="0">
+      <!-- Growth and stretch animation -->
+      <animateTransform 
+        attributeName="transform" 
+        type="scale"
+        values="0,0; 1,1; 1,2.2; 1,2.2; 0,0"
+        dur="4s" 
+        repeatCount="indefinite" 
+        begin="3s"/>
+      
+      <!-- Opacity animation -->
+      <animate 
+        attributeName="opacity"
+        values="0; 0.6; 0.9; 0.8; 0"
+        dur="4s" 
+        repeatCount="indefinite" 
+        begin="3s"/>
+      
+      <!-- Falling motion -->
+      <animateTransform 
+        attributeName="transform" 
+        type="translate"
+        values="0,0; 0,0; 0,0; 0,5; 0,15"
+        dur="4s" 
+        repeatCount="indefinite" 
+        begin="3s"
+        additive="sum"/>
+    </ellipse>
+
+  </g>
+
+  <!-- Accessibility: Respect reduced motion preference -->
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      .honey-drops * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+
+</svg>

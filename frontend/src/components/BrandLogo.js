@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import aiHexagonLogo from '../assets/logos/ai-hexagon.png';
+import aiHexagonLogo from '../assets/logos/Gold Glittered AI Logo Design.png';
 
 const BrandLogo = ({ className = '', size = 'default', variant = 'horizontal', style = {}, mobileAnimate = false }) => {
   const sizeConfig = {
