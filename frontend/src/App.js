@@ -250,16 +250,13 @@ const App = () => {
           <div className="flex justify-between items-center py-4">
             <motion.div 
               whileHover={!device.isMobileDevice ? { scale: 1.05 } : {}}
-              animate={device.isMobileDevice && logoAnimate ? { 
-                scale: 1.1, 
-                rotate: 360 
-              } : {}}
-              transition={{ 
-                duration: 0.8,
-                ease: "easeInOut"
-              }}
             >
-              <BrandLogo variant="horizontal" size="large" style={{ maxHeight: '120px' }} />
+              <BrandLogo 
+                variant="horizontal" 
+                size="large" 
+                style={{ maxHeight: '120px' }} 
+                mobileAnimate={device.isMobileDevice && logoAnimate}
+              />
             </motion.div>
             <div className="hidden md:flex items-center space-x-8">
               <motion.a 
@@ -400,30 +397,36 @@ const App = () => {
                   ref={currentRef}
                   data-service-id={service.id}
                   initial={{ opacity: 0, y: 50 }}
-                  animate={servicesInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ 
-                    duration: 0.8, 
-                    delay: index * 0.1,
-                    scale: { type: "spring", stiffness: 400, damping: 10 }
-                  }}
+                  animate={
+                    device.isMobileDevice && currentInView 
+                      ? {
+                          opacity: 1,
+                          y: 0,
+                          scale: [1, 1.05, 1],
+                          boxShadow: [
+                            "0 0 20px rgba(218, 165, 32, 0.2)",
+                            "0 0 30px rgba(218, 165, 32, 0.4)",
+                            "0 0 20px rgba(218, 165, 32, 0.2)"
+                          ]
+                        }
+                      : servicesInView 
+                        ? { opacity: 1, y: 0 }
+                        : {}
+                  }
+                  transition={
+                    device.isMobileDevice && currentInView 
+                      ? {
+                          duration: 1.5,
+                          delay: 0.5,
+                          ease: "easeInOut"
+                        }
+                      : { 
+                          duration: 0.8, 
+                          delay: index * 0.1,
+                          scale: { type: "spring", stiffness: 400, damping: 10 }
+                        }
+                  }
                   whileHover={!device.isMobileDevice ? { scale: 1.05 } : {}}
-                  animate={device.isMobileDevice && currentInView ? {
-                    scale: [1, 1.05, 1],
-                    boxShadow: [
-                      "0 0 20px rgba(218, 165, 32, 0.2)",
-                      "0 0 30px rgba(218, 165, 32, 0.4)",
-                      "0 0 20px rgba(218, 165, 32, 0.2)"
-                    ]
-                  } : servicesInView ? { opacity: 1, y: 0 } : {}}
-                  transition={device.isMobileDevice && currentInView ? {
-                    duration: 1.5,
-                    delay: 0.5,
-                    ease: "easeInOut"
-                  } : { 
-                    duration: 0.8, 
-                    delay: index * 0.1,
-                    scale: { type: "spring", stiffness: 400, damping: 10 }
-                  }}
                   onHoverStart={() => setHoveredService(service.id)}
                   onHoverEnd={() => setHoveredService(null)}
                   className="service-card-hexagon rounded-2xl cursor-pointer group"

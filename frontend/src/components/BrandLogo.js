@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const BrandLogo = ({ className = '', size = 'default', variant = 'horizontal', style = {} }) => {
+const BrandLogo = ({ className = '', size = 'default', variant = 'horizontal', style = {}, mobileAnimate = false }) => {
   const sizeConfig = {
     small: { hexSize: 32, fontSize: 'text-xs', spacing: 'gap-2' },
     default: { hexSize: 48, fontSize: 'text-lg', spacing: 'gap-3' },
@@ -28,6 +28,10 @@ const BrandLogo = ({ className = '', size = 'default', variant = 'horizontal', s
           scale: 1.1,
           rotate: 360,
         }}
+        animate={mobileAnimate ? {
+          scale: 1.1,
+          rotate: 360
+        } : {}}
         transition={{ 
           duration: 0.8,
           ease: "easeInOut"
