@@ -65,7 +65,7 @@ const ContactForm = ({ onClose }) => {
   };
 
   const modalClasses = device.isMobileDevice
-    ? "bg-charcoal/95 backdrop-blur-md w-full max-w-none rounded-t-2xl p-6 relative shadow-hexagon border border-hive-gold/30 max-h-full overflow-y-auto mx-4"
+    ? "bg-charcoal/95 backdrop-blur-md w-full max-w-none rounded-t-2xl p-6 relative shadow-hexagon border border-hive-gold/30 max-h-full overflow-y-auto mx-4 overflow-x-hidden"
     : "bg-charcoal/95 backdrop-blur-md max-w-md w-full rounded-2xl p-8 relative shadow-hexagon border border-hive-gold/30";
 
   const containerClasses = device.isMobileDevice
@@ -89,27 +89,28 @@ const ContactForm = ({ onClose }) => {
         className={modalClasses}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={onClose}
-          className={`absolute ${device.isMobileDevice ? 'top-2 right-2' : 'top-4 right-4'} text-gray-400 hover:text-white transition-colors z-10`}
-        >
-          <svg className={`${device.isMobileDevice ? 'w-8 h-8' : 'w-6 h-6'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </motion.button>
+        <div className="w-full max-w-full overflow-hidden">
+          {/* Close Button */}
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={onClose}
+            className={`absolute ${device.isMobileDevice ? 'top-2 right-2' : 'top-4 right-4'} text-gray-400 hover:text-white transition-colors z-10`}
+          >
+            <svg className={`${device.isMobileDevice ? 'w-8 h-8' : 'w-6 h-6'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </motion.button>
 
-        {/* Header */}
-        <div className={`${device.isMobileDevice ? 'mb-6' : 'mb-8'}`}>
-          <h2 className={`${device.isMobileDevice ? 'text-xl' : 'text-2xl'} font-bold gradient-text mb-2`}>
-            Get Started with AI
-          </h2>
-        </div>
+          {/* Header */}
+          <div className={`${device.isMobileDevice ? 'mb-6' : 'mb-8'}`}>
+            <h2 className={`${device.isMobileDevice ? 'text-xl' : 'text-2xl'} font-bold gradient-text mb-2`}>
+              Get Started with AI
+            </h2>
+          </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className={`${device.isMobileDevice ? 'space-y-4' : 'space-y-6'}`}>
+        <form onSubmit={handleSubmit} className={`${device.isMobileDevice ? 'space-y-4' : 'space-y-6'} w-full max-w-full`}>
           <div>
             <label className="block text-sm font-medium text-white mb-2">
               Name *
@@ -120,7 +121,7 @@ const ContactForm = ({ onClose }) => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
+              className="w-full min-w-0 px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
               placeholder="Your full name"
             />
           </div>
@@ -135,7 +136,7 @@ const ContactForm = ({ onClose }) => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
+              className="w-full min-w-0 px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
               placeholder="your@email.com"
             />
           </div>
@@ -149,7 +150,7 @@ const ContactForm = ({ onClose }) => {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
+              className="w-full min-w-0 px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
               placeholder="(555) 123-4567"
             />
           </div>
@@ -163,7 +164,7 @@ const ContactForm = ({ onClose }) => {
               name="company"
               value={formData.company}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
+              className="w-full min-w-0 px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
               placeholder="Your company name"
             />
           </div>
@@ -176,7 +177,7 @@ const ContactForm = ({ onClose }) => {
               name="service"
               value={formData.service}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
+              className="w-full min-w-0 px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
             >
               <option value="">Select a service</option>
               {services.map((service) => (
@@ -197,7 +198,7 @@ const ContactForm = ({ onClose }) => {
               onChange={handleChange}
               required
               rows={4}
-              className="w-full px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
+              className="w-full min-w-0 px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
               placeholder="Tell us about your AI goals and challenges..."
             />
           </div>
@@ -246,6 +247,7 @@ const ContactForm = ({ onClose }) => {
             </p>
           </motion.div>
         )}
+        </div>
       </motion.div>
     </motion.div>
   );
