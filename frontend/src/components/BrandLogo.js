@@ -32,8 +32,8 @@ const BrandLogo = ({ className = '', size = 'default', variant = 'horizontal', s
         animate={{
           filter: [
             "brightness(1) saturate(1)",
-            "brightness(1.3) saturate(1.4)", 
-            "brightness(1.1) saturate(1.2)",
+            "brightness(1.15) saturate(1.2)", 
+            "brightness(1.08) saturate(1.1)",
             "brightness(1) saturate(1)"
           ]
         }}
