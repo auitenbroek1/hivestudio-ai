@@ -368,8 +368,10 @@ const App = () => {
                   className="service-card-hexagon rounded-2xl cursor-pointer group"
                 >
                 <div className="text-left space-y-4 py-2">
-                  <div className="text-4xl mb-4">
-                    {service.icon}
+                  <div className="mb-4">
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm rounded-lg text-4xl">
+                      {service.icon}
+                    </div>
                   </div>
                   <h3 className="text-xl font-semibold text-white">
                     {service.title}
