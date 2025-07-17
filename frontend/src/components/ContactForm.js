@@ -60,14 +60,16 @@ const ContactForm = ({ onClose }) => {
     height: device.isMobileDevice ? `${device.getModalHeight()}px` : '100vh',
     paddingTop: device.viewport.safeAreaInsets.top,
     paddingBottom: device.viewport.safeAreaInsets.bottom,
+    paddingLeft: device.viewport.safeAreaInsets.left,
+    paddingRight: device.viewport.safeAreaInsets.right,
   };
 
   const modalClasses = device.isMobileDevice
-    ? "bg-charcoal/95 backdrop-blur-md w-full max-w-none rounded-t-2xl p-6 relative shadow-hexagon border border-hive-gold/30 max-h-full overflow-y-auto"
+    ? "bg-charcoal/95 backdrop-blur-md w-full max-w-none rounded-t-2xl p-6 relative shadow-hexagon border border-hive-gold/30 max-h-full overflow-y-auto mx-4"
     : "bg-charcoal/95 backdrop-blur-md max-w-md w-full rounded-2xl p-8 relative shadow-hexagon border border-hive-gold/30";
 
   const containerClasses = device.isMobileDevice
-    ? "flex items-end justify-center z-50"
+    ? "flex items-end justify-center z-50 px-4"
     : "flex items-center justify-center z-50 p-4";
 
   return (
