@@ -6,6 +6,7 @@ import BeeIcon from './BeeIcon';
 const AIChatWidget = () => {
   const device = useDevice();
   const [isOpen, setIsOpen] = useState(false);
+  const [shouldPulse, setShouldPulse] = useState(false);
   const [messages, setMessages] = useState([
     {
       id: 1,
@@ -34,6 +35,18 @@ const AIChatWidget = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+  
+  // Mobile pulse animation
+  useEffect(() => {
+    if (!device.isMobileDevice) return;
+    
+    const pulseInterval = setInterval(() => {
+      setShouldPulse(true);
+      setTimeout(() => setShouldPulse(false), 1000);
+    }, 5000);
+    
+    return () => clearInterval(pulseInterval);
+  }, [device.isMobileDevice]);
 
   const handleSend = () => {
     if (!inputValue.trim()) return;
@@ -84,9 +97,18 @@ const AIChatWidget = () => {
     <>
       {/* Chat Toggle Button */}
       <motion.button
-        whileHover={{ scale: 1.1 }}
+        whileHover={!device.isMobileDevice ? { scale: 1.1 } : {}}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
+        animate={device.isMobileDevice && shouldPulse ? {
+          scale: [1, 1.1, 1],
+          boxShadow: [
+            "0 0 20px rgba(218, 165, 32, 0.5)",
+            "0 0 30px rgba(218, 165, 32, 0.8)",
+            "0 0 20px rgba(218, 165, 32, 0.5)"
+          ]
+        } : {}}
+        transition={{ duration: 1, ease: "easeInOut" }}
         className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-hive-gold to-honey-bright text-charcoal rounded-full shadow-glow-honey z-50 flex items-center justify-center text-2xl hover:shadow-glow transition-all duration-300"
       >
         {isOpen ? '✕' : (device.shouldUseNativeEmoji() ? '🐝' : <BeeIcon size={device.getIconSize(44)} />)}

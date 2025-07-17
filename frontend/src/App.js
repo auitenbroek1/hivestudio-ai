@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useDevice } from './contexts/DeviceContext';
 import AnimatedText from './components/AnimatedText';
 import ContactForm from './components/ContactForm';
 import AIChatWidget from './components/AIChatWidget';
@@ -10,6 +11,7 @@ import logoTransparent from './assets/logos/HiveStudio-logoTransparent.png';
 import './App.css';
 
 const App = () => {
+  const device = useDevice();
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeService, setActiveService] = useState(null);
   const [hoveredService, setHoveredService] = useState(null);
@@ -17,6 +19,11 @@ const App = () => {
   const [isLearnMoreOpen, setIsLearnMoreOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  
+  // Mobile animation states
+  const [logoAnimate, setLogoAnimate] = useState(false);
+  const [navAnimate, setNavAnimate] = useState(false);
+  const [buttonAnimate, setButtonAnimate] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -84,11 +91,59 @@ const App = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Mobile periodic animations
+  useEffect(() => {
+    if (!device.isMobileDevice) return;
+    
+    // Logo animation every 15 seconds
+    const logoInterval = setInterval(() => {
+      setLogoAnimate(true);
+      setTimeout(() => setLogoAnimate(false), 800);
+    }, 15000);
+    
+    // Nav animation every 15 seconds (offset by 5 seconds)
+    const navInterval = setInterval(() => {
+      setNavAnimate(true);
+      setTimeout(() => setNavAnimate(false), 500);
+    }, 15000);
+    
+    // Button animation every 15 seconds (offset by 10 seconds)
+    const buttonInterval = setInterval(() => {
+      setButtonAnimate(true);
+      setTimeout(() => setButtonAnimate(false), 300);
+    }, 15000);
+    
+    // Start nav animation after 5 seconds
+    setTimeout(() => {
+      setNavAnimate(true);
+      setTimeout(() => setNavAnimate(false), 500);
+    }, 5000);
+    
+    // Start button animation after 10 seconds
+    setTimeout(() => {
+      setButtonAnimate(true);
+      setTimeout(() => setButtonAnimate(false), 300);
+    }, 10000);
+    
+    return () => {
+      clearInterval(logoInterval);
+      clearInterval(navInterval);
+      clearInterval(buttonInterval);
+    };
+  }, [device.isMobileDevice]);
+
   // Intersection observer hooks for animations
   const [heroRef, heroInView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [servicesRef, servicesInView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [aboutRef, aboutInView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [testimonialsRef, testimonialsInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [ctaRef, ctaInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  
+  // Service card individual intersection observers
+  const [service1Ref, service1InView] = useInView({ threshold: 0.3, triggerOnce: true });
+  const [service2Ref, service2InView] = useInView({ threshold: 0.3, triggerOnce: true });
+  const [service3Ref, service3InView] = useInView({ threshold: 0.3, triggerOnce: true });
+  const [service4Ref, service4InView] = useInView({ threshold: 0.3, triggerOnce: true });
 
   const services = [
     {
@@ -194,18 +249,49 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <motion.div 
-              whileHover={{ scale: 1.05 }}
+              whileHover={!device.isMobileDevice ? { scale: 1.05 } : {}}
+              animate={device.isMobileDevice && logoAnimate ? { 
+                scale: 1.1, 
+                rotate: 360 
+              } : {}}
+              transition={{ 
+                duration: 0.8,
+                ease: "easeInOut"
+              }}
             >
               <BrandLogo variant="horizontal" size="large" style={{ maxHeight: '120px' }} />
             </motion.div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#services" className="text-charcoal hover:text-hive-gold transition-colors">Services</a>
-              <a href="#about" className="text-charcoal hover:text-hive-gold transition-colors">About</a>
-              <a href="#testimonials" className="text-charcoal hover:text-hive-gold transition-colors">Testimonials</a>
+              <motion.a 
+                href="#services" 
+                className="text-charcoal hover:text-hive-gold transition-colors"
+                animate={device.isMobileDevice && navAnimate ? { color: '#DAA520' } : {}}
+                transition={{ duration: 0.5 }}
+              >
+                Services
+              </motion.a>
+              <motion.a 
+                href="#about" 
+                className="text-charcoal hover:text-hive-gold transition-colors"
+                animate={device.isMobileDevice && navAnimate ? { color: '#DAA520' } : {}}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                About
+              </motion.a>
+              <motion.a 
+                href="#testimonials" 
+                className="text-charcoal hover:text-hive-gold transition-colors"
+                animate={device.isMobileDevice && navAnimate ? { color: '#DAA520' } : {}}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                Testimonials
+              </motion.a>
               <motion.button
                 onClick={() => setIsContactFormOpen(true)}
-                whileHover={{ scale: 1.05 }}
+                whileHover={!device.isMobileDevice ? { scale: 1.05 } : {}}
                 whileTap={{ scale: 0.95 }}
+                animate={device.isMobileDevice && buttonAnimate ? { scale: 1.05 } : {}}
+                transition={{ duration: 0.3 }}
                 className="hexagon-button"
               >
                 Get Started
@@ -259,8 +345,21 @@ const App = () => {
             >
               <motion.button
                 onClick={() => setIsContactFormOpen(true)}
-                whileHover={{ scale: 1.05 }}
+                whileHover={!device.isMobileDevice ? { scale: 1.05 } : {}}
                 whileTap={{ scale: 0.95 }}
+                animate={device.isMobileDevice && heroInView ? { 
+                  scale: [1, 1.05, 1],
+                  boxShadow: [
+                    "0 0 20px rgba(218, 165, 32, 0.3)",
+                    "0 0 30px rgba(218, 165, 32, 0.6)",
+                    "0 0 20px rgba(218, 165, 32, 0.3)"
+                  ]
+                } : {}}
+                transition={{ 
+                  duration: 2,
+                  repeat: device.isMobileDevice && heroInView ? Infinity : 0,
+                  repeatType: "loop"
+                }}
                 className="hexagon-button text-lg px-10 py-4 honey-glow"
               >
                 Start Your AI Journey
@@ -289,22 +388,46 @@ const App = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.id}
-                data-service-id={service.id}
-                initial={{ opacity: 0, y: 50 }}
-                animate={servicesInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ 
-                  duration: 0.8, 
-                  delay: index * 0.1,
-                  scale: { type: "spring", stiffness: 400, damping: 10 }
-                }}
-                whileHover={{ scale: 1.05 }}
-                onHoverStart={() => setHoveredService(service.id)}
-                onHoverEnd={() => setHoveredService(null)}
-                className="service-card-hexagon rounded-2xl cursor-pointer group"
-              >
+            {services.map((service, index) => {
+              const serviceRefs = [service1Ref, service2Ref, service3Ref, service4Ref];
+              const serviceInViews = [service1InView, service2InView, service3InView, service4InView];
+              const currentRef = serviceRefs[index];
+              const currentInView = serviceInViews[index];
+              
+              return (
+                <motion.div
+                  key={service.id}
+                  ref={currentRef}
+                  data-service-id={service.id}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={servicesInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: index * 0.1,
+                    scale: { type: "spring", stiffness: 400, damping: 10 }
+                  }}
+                  whileHover={!device.isMobileDevice ? { scale: 1.05 } : {}}
+                  animate={device.isMobileDevice && currentInView ? {
+                    scale: [1, 1.05, 1],
+                    boxShadow: [
+                      "0 0 20px rgba(218, 165, 32, 0.2)",
+                      "0 0 30px rgba(218, 165, 32, 0.4)",
+                      "0 0 20px rgba(218, 165, 32, 0.2)"
+                    ]
+                  } : servicesInView ? { opacity: 1, y: 0 } : {}}
+                  transition={device.isMobileDevice && currentInView ? {
+                    duration: 1.5,
+                    delay: 0.5,
+                    ease: "easeInOut"
+                  } : { 
+                    duration: 0.8, 
+                    delay: index * 0.1,
+                    scale: { type: "spring", stiffness: 400, damping: 10 }
+                  }}
+                  onHoverStart={() => setHoveredService(service.id)}
+                  onHoverEnd={() => setHoveredService(null)}
+                  className="service-card-hexagon rounded-2xl cursor-pointer group"
+                >
                 <div className="text-left space-y-4 py-2">
                   <div className="text-4xl mb-4">
                     {service.icon}
@@ -328,7 +451,8 @@ const App = () => {
                   </ul>
                 </div>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -441,6 +565,7 @@ const App = () => {
 
       {/* CTA Section */}
       <motion.section 
+        ref={ctaRef}
         className="py-20 text-white relative overflow-hidden"
         style={{ background: 'linear-gradient(to right, rgba(26,26,26,0.95), rgba(42,42,42,0.95))' }}
         initial={{ opacity: 0 }}
@@ -459,11 +584,23 @@ const App = () => {
               className="h-80 w-auto"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={{ 
+              whileHover={!device.isMobileDevice ? { 
                 scale: 1.1,
                 filter: "drop-shadow(0 0 30px rgba(218, 165, 32, 0.8)) drop-shadow(0 0 60px rgba(255, 191, 0, 0.6))"
-              }}
-              transition={{ duration: 0.6 }}
+              } : {}}
+              animate={device.isMobileDevice && ctaInView ? {
+                filter: [
+                  "drop-shadow(0 0 20px rgba(218, 165, 32, 0.3))",
+                  "drop-shadow(0 0 30px rgba(218, 165, 32, 0.8)) drop-shadow(0 0 60px rgba(255, 191, 0, 0.6))",
+                  "drop-shadow(0 0 20px rgba(218, 165, 32, 0.3))"
+                ],
+                scale: [1, 1.05, 1]
+              } : {}}
+              transition={device.isMobileDevice && ctaInView ? {
+                duration: 2,
+                delay: 0.5,
+                ease: "easeInOut"
+              } : { duration: 0.6 }}
               viewport={{ once: true }}
               style={{
                 filter: "drop-shadow(0 0 20px rgba(218, 165, 32, 0.3))"
