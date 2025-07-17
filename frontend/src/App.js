@@ -160,11 +160,12 @@ const App = () => {
         <img 
           src={logoTransparent}
           alt=""
-          className="w-auto"
+          className="w-auto h-auto"
           style={{
-            height: '80vh',
+            maxHeight: '80vh',
             maxWidth: '80vw',
-            opacity: 0.15
+            opacity: 0.15,
+            objectFit: 'contain'
           }}
         />
       </div>
