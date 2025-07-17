@@ -109,8 +109,10 @@
   
   /* Hexagon button */
   .hexagon-button {
-    @apply relative px-8 py-3 bg-gradient-to-r from-hive-gold to-honey-bright text-charcoal font-semibold transition-all duration-300;
+    @apply relative px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-3 bg-gradient-to-r from-hive-gold to-honey-bright text-charcoal font-semibold transition-all duration-300 flex-shrink-0;
     clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+    min-width: fit-content;
+    white-space: nowrap;
   }
   
   .hexagon-button:hover {
