@@ -531,14 +531,16 @@ const App = () => {
                 filter: [
                   "drop-shadow(0 0 20px rgba(218, 165, 32, 0.3))",
                   "drop-shadow(0 0 30px rgba(218, 165, 32, 0.8)) drop-shadow(0 0 60px rgba(255, 191, 0, 0.6))",
+                  "drop-shadow(0 0 30px rgba(218, 165, 32, 0.8)) drop-shadow(0 0 60px rgba(255, 191, 0, 0.6))",
                   "drop-shadow(0 0 20px rgba(218, 165, 32, 0.3))"
                 ],
-                scale: [1, 1.05, 1]
+                scale: [1, 1.05, 1.05, 1]
               } : {}}
               transition={device.isMobileDevice && ctaInView ? {
-                duration: 2,
+                duration: 4,
                 delay: 0.5,
-                ease: "easeInOut"
+                ease: "easeInOut",
+                times: [0, 0.25, 0.75, 1]
               } : { duration: 0.6 }}
               viewport={{ once: true }}
               style={{
