@@ -267,8 +267,8 @@ const App = () => {
                 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-charcoal leading-tight"
               >
                 <AnimatedText 
-                  texts={["Cut Through the", "Navigate Beyond the", "Rise Above the"]}
-                  staticEnd="AI Hype"
+                  texts={["Cut Through", "Navigate Beyond", "Rise Above"]}
+                  staticEnd="the AI Hype"
                   className="block"
                 />
               </motion.h1>
