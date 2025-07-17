@@ -218,28 +218,27 @@ const App = () => {
             : 'bg-transparent'
         }`}
       >
-        <div className="w-full px-2 sm:px-4 lg:px-8">
-          <div className="flex justify-between items-center py-2 sm:py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
             <motion.div 
               whileHover={!device.isMobileDevice ? { scale: 1.05 } : {}}
-              className="flex-shrink-0"
             >
               <BrandLogo 
                 variant="horizontal" 
-                size={device.isMobileDevice ? "default" : "large"}
-                style={{ maxHeight: device.isMobileDevice ? '80px' : '120px' }} 
+                size="large" 
+                style={{ maxHeight: '120px' }} 
                 mobileAnimate={device.isMobileDevice && logoAnimate}
               />
             </motion.div>
-            <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
-              <a href="#services" className="text-charcoal hover:text-hive-gold transition-colors text-sm lg:text-base">Services</a>
-              <a href="#about" className="text-charcoal hover:text-hive-gold transition-colors text-sm lg:text-base">About</a>
-              <a href="#testimonials" className="text-charcoal hover:text-hive-gold transition-colors text-sm lg:text-base">Testimonials</a>
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#services" className="text-charcoal hover:text-hive-gold transition-colors">Services</a>
+              <a href="#about" className="text-charcoal hover:text-hive-gold transition-colors">About</a>
+              <a href="#testimonials" className="text-charcoal hover:text-hive-gold transition-colors">Testimonials</a>
               <motion.button
                 onClick={() => setIsContactFormOpen(true)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="hexagon-button text-sm lg:text-base"
+                className="hexagon-button"
               >
                 Get Started
               </motion.button>
