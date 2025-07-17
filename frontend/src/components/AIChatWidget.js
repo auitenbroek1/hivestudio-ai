@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useDevice } from '../contexts/DeviceContext';
+import BeeIcon from './BeeIcon';
 
 const AIChatWidget = () => {
+  const device = useDevice();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
@@ -86,7 +89,7 @@ const AIChatWidget = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-hive-gold to-honey-bright text-charcoal rounded-full shadow-glow-honey z-50 flex items-center justify-center text-2xl hover:shadow-glow transition-all duration-300"
       >
-        {isOpen ? '✕' : '🐝'}
+        {isOpen ? '✕' : (device.shouldUseNativeEmoji() ? '🐝' : <BeeIcon size={device.getIconSize(24)} />)}
       </motion.button>
 
       {/* Chat Window */}
