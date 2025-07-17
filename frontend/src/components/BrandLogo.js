@@ -31,13 +31,14 @@ const BrandLogo = ({ className = '', size = 'default', variant = 'horizontal', s
         }}
         animate={{
           filter: [
-            "drop-shadow(0 0 0px #DAA520)", 
-            "drop-shadow(0 0 8px #FFBF00)", 
-            "drop-shadow(0 0 0px #DAA520)"
+            "brightness(1) saturate(1)",
+            "brightness(1.3) saturate(1.4)", 
+            "brightness(1.1) saturate(1.2)",
+            "brightness(1) saturate(1)"
           ]
         }}
         transition={{ 
-          duration: 3,
+          duration: 2.5,
           ease: "easeInOut",
           repeat: Infinity,
           repeatType: "loop"
