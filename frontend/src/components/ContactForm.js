@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useDevice } from '../contexts/DeviceContext';
 
 const ContactForm = ({ onClose }) => {
+  const device = useDevice();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -48,20 +50,41 @@ const ContactForm = ({ onClose }) => {
     }
   };
 
+  // Dynamic styling based on device
+  const overlayStyle = {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: device.isMobileDevice ? `${device.getModalHeight()}px` : '100vh',
+    paddingTop: device.viewport.safeAreaInsets.top,
+    paddingBottom: device.viewport.safeAreaInsets.bottom,
+  };
+
+  const modalClasses = device.isMobileDevice
+    ? "bg-charcoal/95 backdrop-blur-md w-full max-w-none rounded-t-2xl p-6 relative shadow-hexagon border border-hive-gold/30 max-h-full overflow-y-auto"
+    : "bg-charcoal/95 backdrop-blur-md max-w-md w-full rounded-2xl p-8 relative shadow-hexagon border border-hive-gold/30";
+
+  const containerClasses = device.isMobileDevice
+    ? "flex items-end justify-center z-50"
+    : "flex items-center justify-center z-50 p-4";
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+      className={`bg-black/50 ${containerClasses}`}
+      style={overlayStyle}
       onClick={onClose}
     >
       <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.8, opacity: 0 }}
+        initial={{ scale: 0.8, opacity: 0, y: device.isMobileDevice ? 100 : 0 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.8, opacity: 0, y: device.isMobileDevice ? 100 : 0 }}
         transition={{ type: "spring", damping: 20, stiffness: 300 }}
-        className="bg-charcoal/95 backdrop-blur-md max-w-md w-full rounded-2xl p-8 relative shadow-hexagon border border-hive-gold/30"
+        className={modalClasses}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -69,22 +92,22 @@ const ContactForm = ({ onClose }) => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+          className={`absolute ${device.isMobileDevice ? 'top-2 right-2' : 'top-4 right-4'} text-gray-400 hover:text-white transition-colors z-10`}
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className={`${device.isMobileDevice ? 'w-8 h-8' : 'w-6 h-6'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </motion.button>
 
         {/* Header */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold gradient-text mb-2">
+        <div className={`${device.isMobileDevice ? 'mb-6' : 'mb-8'}`}>
+          <h2 className={`${device.isMobileDevice ? 'text-xl' : 'text-2xl'} font-bold gradient-text mb-2`}>
             Get Started with AI
           </h2>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className={`${device.isMobileDevice ? 'space-y-4' : 'space-y-6'}`}>
           <div>
             <label className="block text-sm font-medium text-white mb-2">
               Name *

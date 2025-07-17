@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  /* iOS Safe Area Support */
+  html {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  
   body {
     @apply font-sans antialiased;
   }
