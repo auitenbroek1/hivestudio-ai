@@ -20,8 +20,6 @@ const App = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   
-  // Mobile animation states
-  const [logoAnimate, setLogoAnimate] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -89,20 +87,6 @@ const App = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Mobile periodic animations
-  useEffect(() => {
-    if (!device.isMobileDevice) return;
-    
-    // Logo animation every 15 seconds
-    const logoInterval = setInterval(() => {
-      setLogoAnimate(true);
-      setTimeout(() => setLogoAnimate(false), 800);
-    }, 15000);
-    
-    return () => {
-      clearInterval(logoInterval);
-    };
-  }, [device.isMobileDevice]);
 
   // Intersection observer hooks for animations
   const [heroRef, heroInView] = useInView({ threshold: 0.1, triggerOnce: true });
@@ -226,8 +210,7 @@ const App = () => {
               <BrandLogo 
                 variant="horizontal" 
                 size="large" 
-                style={{ maxHeight: '120px' }} 
-                mobileAnimate={device.isMobileDevice && logoAnimate}
+                style={{ maxHeight: '120px' }}
               />
             </motion.div>
             <div className="hidden md:flex items-center space-x-8">

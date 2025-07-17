@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import aiHexagonLogo from '../assets/logos/Gold Glittered AI Logo Design.png';
 
-const BrandLogo = ({ className = '', size = 'default', variant = 'horizontal', style = {}, mobileAnimate = false }) => {
+const BrandLogo = ({ className = '', size = 'default', variant = 'horizontal', style = {} }) => {
   const sizeConfig = {
     small: { hexSize: 32, fontSize: 'text-xs', spacing: 'gap-2' },
     default: { hexSize: 48, fontSize: 'text-lg', spacing: 'gap-3' },
@@ -26,16 +26,21 @@ const BrandLogo = ({ className = '', size = 'default', variant = 'horizontal', s
       <motion.div
         className="relative"
         whileHover={{ 
-          scale: 1.1,
-          rotate: 360,
+          filter: "drop-shadow(0 0 8px #FFBF00)",
+          scale: 1.05,
         }}
-        animate={mobileAnimate ? {
-          scale: 1.1,
-          rotate: 360
-        } : {}}
+        animate={{
+          filter: [
+            "drop-shadow(0 0 0px #DAA520)", 
+            "drop-shadow(0 0 8px #FFBF00)", 
+            "drop-shadow(0 0 0px #DAA520)"
+          ]
+        }}
         transition={{ 
-          duration: 0.8,
-          ease: "easeInOut"
+          duration: 3,
+          ease: "easeInOut",
+          repeat: Infinity,
+          repeatType: "loop"
         }}
       >
         <img 
