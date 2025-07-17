@@ -89,7 +89,7 @@ const AIChatWidget = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-hive-gold to-honey-bright text-charcoal rounded-full shadow-glow-honey z-50 flex items-center justify-center text-2xl hover:shadow-glow transition-all duration-300"
       >
-        {isOpen ? '✕' : (device.shouldUseNativeEmoji() ? '🐝' : <BeeIcon size={device.getIconSize(36)} />)}
+        {isOpen ? '✕' : (device.shouldUseNativeEmoji() ? '🐝' : <BeeIcon size={device.getIconSize(44)} />)}
       </motion.button>
 
       {/* Chat Window */}
