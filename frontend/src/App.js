@@ -254,7 +254,7 @@ const App = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+              className="flex items-center justify-center"
             >
               <motion.button
                 onClick={() => setIsContactFormOpen(true)}
@@ -263,15 +263,6 @@ const App = () => {
                 className="hexagon-button text-lg px-10 py-4 honey-glow"
               >
                 Start Your AI Journey
-              </motion.button>
-              
-              <motion.button
-                onClick={() => setIsLearnMoreOpen(true)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-transparent border-2 border-hive-gold text-hive-gold px-8 py-3 rounded-full hover:bg-hive-gold hover:text-charcoal transition-all"
-              >
-                Learn More
               </motion.button>
             </motion.div>
           </motion.div>
