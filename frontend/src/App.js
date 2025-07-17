@@ -529,10 +529,10 @@ const App = () => {
               } : {}}
               animate={device.isMobileDevice && ctaInView ? {
                 filter: [
-                  "drop-shadow(0 0 20px rgba(218, 165, 32, 0.3))",
-                  "drop-shadow(0 0 30px rgba(218, 165, 32, 0.8)) drop-shadow(0 0 60px rgba(255, 191, 0, 0.6))",
-                  "drop-shadow(0 0 30px rgba(218, 165, 32, 0.8)) drop-shadow(0 0 60px rgba(255, 191, 0, 0.6))",
-                  "drop-shadow(0 0 20px rgba(218, 165, 32, 0.3))"
+                  "drop-shadow(0 0 20px rgba(218, 165, 32, 0.3)) brightness(1)",
+                  "drop-shadow(0 0 30px rgba(218, 165, 32, 0.8)) drop-shadow(0 0 60px rgba(255, 191, 0, 0.6)) brightness(1)",
+                  "drop-shadow(0 0 30px rgba(218, 165, 32, 0.8)) drop-shadow(0 0 60px rgba(255, 191, 0, 0.6)) brightness(1)",
+                  "drop-shadow(0 0 20px rgba(218, 165, 32, 0.3)) brightness(1)"
                 ],
                 scale: [1, 1.05, 1.05, 1]
               } : {}}
