@@ -22,8 +22,6 @@ const App = () => {
   
   // Mobile animation states
   const [logoAnimate, setLogoAnimate] = useState(false);
-  const [navAnimate, setNavAnimate] = useState(false);
-  const [buttonAnimate, setButtonAnimate] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,34 +99,8 @@ const App = () => {
       setTimeout(() => setLogoAnimate(false), 800);
     }, 15000);
     
-    // Nav animation every 15 seconds (offset by 5 seconds)
-    const navInterval = setInterval(() => {
-      setNavAnimate(true);
-      setTimeout(() => setNavAnimate(false), 500);
-    }, 15000);
-    
-    // Button animation every 15 seconds (offset by 10 seconds)
-    const buttonInterval = setInterval(() => {
-      setButtonAnimate(true);
-      setTimeout(() => setButtonAnimate(false), 300);
-    }, 15000);
-    
-    // Start nav animation after 5 seconds
-    setTimeout(() => {
-      setNavAnimate(true);
-      setTimeout(() => setNavAnimate(false), 500);
-    }, 5000);
-    
-    // Start button animation after 10 seconds
-    setTimeout(() => {
-      setButtonAnimate(true);
-      setTimeout(() => setButtonAnimate(false), 300);
-    }, 10000);
-    
     return () => {
       clearInterval(logoInterval);
-      clearInterval(navInterval);
-      clearInterval(buttonInterval);
     };
   }, [device.isMobileDevice]);
 
@@ -259,36 +231,13 @@ const App = () => {
               />
             </motion.div>
             <div className="hidden md:flex items-center space-x-8">
-              <motion.a 
-                href="#services" 
-                className="text-charcoal hover:text-hive-gold transition-colors"
-                animate={device.isMobileDevice && navAnimate ? { color: '#DAA520' } : {}}
-                transition={{ duration: 0.5 }}
-              >
-                Services
-              </motion.a>
-              <motion.a 
-                href="#about" 
-                className="text-charcoal hover:text-hive-gold transition-colors"
-                animate={device.isMobileDevice && navAnimate ? { color: '#DAA520' } : {}}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                About
-              </motion.a>
-              <motion.a 
-                href="#testimonials" 
-                className="text-charcoal hover:text-hive-gold transition-colors"
-                animate={device.isMobileDevice && navAnimate ? { color: '#DAA520' } : {}}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                Testimonials
-              </motion.a>
+              <a href="#services" className="text-charcoal hover:text-hive-gold transition-colors">Services</a>
+              <a href="#about" className="text-charcoal hover:text-hive-gold transition-colors">About</a>
+              <a href="#testimonials" className="text-charcoal hover:text-hive-gold transition-colors">Testimonials</a>
               <motion.button
                 onClick={() => setIsContactFormOpen(true)}
-                whileHover={!device.isMobileDevice ? { scale: 1.05 } : {}}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                animate={device.isMobileDevice && buttonAnimate ? { scale: 1.05 } : {}}
-                transition={{ duration: 0.3 }}
                 className="hexagon-button"
               >
                 Get Started
@@ -342,21 +291,8 @@ const App = () => {
             >
               <motion.button
                 onClick={() => setIsContactFormOpen(true)}
-                whileHover={!device.isMobileDevice ? { scale: 1.05 } : {}}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                animate={device.isMobileDevice && heroInView ? { 
-                  scale: [1, 1.05, 1],
-                  boxShadow: [
-                    "0 0 20px rgba(218, 165, 32, 0.3)",
-                    "0 0 30px rgba(218, 165, 32, 0.6)",
-                    "0 0 20px rgba(218, 165, 32, 0.3)"
-                  ]
-                } : {}}
-                transition={{ 
-                  duration: 2,
-                  repeat: device.isMobileDevice && heroInView ? Infinity : 0,
-                  repeatType: "loop"
-                }}
                 className="hexagon-button text-lg px-10 py-4 honey-glow"
               >
                 Start Your AI Journey
