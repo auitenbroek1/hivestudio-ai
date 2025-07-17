@@ -219,8 +219,6 @@ const App = () => {
         ref={heroRef}
         className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-16 pb-8"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/75 to-white/70" />
-        
         <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
