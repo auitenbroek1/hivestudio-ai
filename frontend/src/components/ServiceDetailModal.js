@@ -7,7 +7,7 @@ const ServiceDetailModal = ({ isOpen, onClose, service }) => {
   const serviceDetails = {
     1: {
       title: "AI Level-Up",
-      subtitle: "Your foundation for AI-powered business growth",
+      subtitle: "Your foundation for AI-powered growth",
       description: "Perfect for teams and individuals who recognize AI's importance but haven't yet unlocked its full potential. We provide practical, jargon-free guidance to help you build confidence and create immediate value.",
       approach: "We meet you exactly where you are with a clear, methodical approach that focuses on real business applications rather than theoretical concepts.",
       outcomes: [
