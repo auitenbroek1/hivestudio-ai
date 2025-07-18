@@ -104,7 +104,7 @@ const App = () => {
   const services = [
     {
       id: 1,
-      title: "The AI Level-Up",
+      title: "AI Level-Up",
       subtitle: "For teams new to practical AI",
       description: "Patient, educational guidance through practical AI fundamentals, frameworks, and tools that cut through the hype and focus on real business value.",
       features: ["AI fundamentals for business", "Practical use cases", "Industry-specific applications", "Measurable outcomes"],
@@ -113,7 +113,7 @@ const App = () => {
     },
     {
       id: 2,
-      title: "The AI-First Leader",
+      title: "AI Power User",
       subtitle: "Fastest path to AI confidence",
       description: "Take your AI skills and abilities to the next level, creating a lasting competitive advantage for your business or career.",
       features: ["Hands-on AI tools & automations", "Live implementation sessions", "Advanced AI skill building", "ROI evaluation frameworks"],
@@ -595,8 +595,8 @@ const App = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4 text-hive-gold">Services</h4>
               <ul className="space-y-2 text-gray-300">
-                <li>The AI Level-Up</li>
-                <li>The AI-First Leader</li>
+                <li>AI Level-Up</li>
+                <li>AI Power User</li>
                 <li>AI Discovery Workshop</li>
                 <li>AI Build Services</li>
               </ul>
