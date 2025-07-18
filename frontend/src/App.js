@@ -116,7 +116,7 @@ const App = () => {
       title: "The AI-First Leader",
       subtitle: "Fastest path to AI confidence",
       description: "Take your AI skills and abilities to the next level, creating a lasting competitive advantage for your business or career.",
-      features: ["Hands-on AI tools & automations", "Live implementation sessions", "Team skill building", "ROI evaluation frameworks"],
+      features: ["Hands-on AI tools & automations", "Live implementation sessions", "Advanced AI skill building", "ROI evaluation frameworks"],
       icon: "🛠️",
       color: "from-honey-bright to-hive-gold-dark"
     },
