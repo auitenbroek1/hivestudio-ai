@@ -2,6 +2,7 @@
 
 **🏷️ Version**: 1.1.0 - Professional Service Cards & Detailed Modals  
 **📅 Date**: July 18, 2025  
+**📝 Last Update**: AI Level-Up modal text refined for clarity  
 **🌐 Live Site**: https://hivestudio.ai  
 **🔗 Repository**: https://github.com/auitenbroek1/hivestudio-ai  
 
@@ -69,23 +70,33 @@ hivestudio-ai/
 
 ---
 
+## 📝 Latest Update
+
+**Last Change**: Updated AI Level-Up modal ideal customer description to be more concise and inclusive.
+
+---
+
 ## 🎯 Service Offerings (Current)
 
 ### **1. AI Level-Up** 🎓
 - For teams new to practical AI
-- Features: AI fundamentals, practical use cases, professional thinking, measurable outcomes
+- Features: AI fundamentals for business, practical use cases, think and use AI like a pro, achieve measurable outcomes
+- Modal: Teams new to AI implementation, business or team leaders seeking practical AI education without technical complexity
 
 ### **2. AI Power User** 🛠️  
 - Advanced AI implementation for experienced users
-- Features: Hands-on implementations, AI agents & automations, advanced workflows & frameworks, new tools & tool-chaining
+- Features: Hands-on AI implementations, AI agents & automations, advanced AI workflows & frameworks, new tools & tool-chaining
+- Modal: Current AI users seeking advanced capabilities
 
 ### **3. AI Discovery Workshop** 🔍
 - Strategic AI assessment and roadmap development  
-- Features: Opportunity assessment, solution planning, implementation roadmap, readiness audit & resource planning
+- Features: AI opportunity assessment, custom solution planning, implementation roadmap, readiness audit & resource planning
+- Modal: Organizations evaluating AI adoption, leadership teams developing AI strategy
 
 ### **4. AI Build Services** ⚡
 - Custom AI solution development and implementation
-- Features: Custom development, end-to-end build & integration services, performance optimization, ongoing refinement & support
+- Features: Custom AI development, end-to-end build & integration services, performance optimization, ongoing refinement & support
+- Modal: Organizations with specific AI implementation needs
 
 ---
 

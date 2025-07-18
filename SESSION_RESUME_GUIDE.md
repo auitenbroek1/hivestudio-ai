@@ -94,13 +94,13 @@ hivestudio-ai/
 - **CTA**: Single "Start Your AI Journey" button (Learn More removed)
 
 ### 🛠️ Services Section  
-1. **The AI Level-Up** - For teams new to practical AI
-2. **The AI-First Leader** - Hands-on AI tools & automations  
+1. **AI Level-Up** - For teams new to practical AI
+2. **AI Power User** - Advanced AI implementation for experienced users
 3. **AI Discovery Workshop** - Strategic AI roadmap development
 4. **AI Build Services** - Direct AI solution implementation
+- **Service Cards**: Professional features with consistent ampersand formatting
+- **Learn More Buttons**: Open detailed modal descriptions for each service
 - **Service Icons**: Golden rounded backgrounds (bg-hive-gold/10) for better contrast
-- **Mobile Animations**: Auto-play glow effect when cards scroll into view
-- **Hover Effects**: Desktop hover animations preserved
 
 ### 👥 About Section
 - Company credentials and differentiators
