@@ -7,6 +7,7 @@ import ContactForm from './components/ContactForm';
 import AIChatWidget from './components/AIChatWidget';
 import BrandLogo from './components/BrandLogo';
 import LearnMoreModal from './components/LearnMoreModal';
+import ServiceDetailModal from './components/ServiceDetailModal';
 import logoTransparent from './assets/logos/HiveStudio-logoTransparent.png';
 import './App.css';
 
@@ -17,9 +18,21 @@ const App = () => {
   const [hoveredService, setHoveredService] = useState(null);
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const [isLearnMoreOpen, setIsLearnMoreOpen] = useState(false);
+  const [isServiceModalOpen, setIsServiceModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   
+  // Service modal handlers
+  const openServiceModal = (service) => {
+    setSelectedService(service);
+    setIsServiceModalOpen(true);
+  };
+
+  const closeServiceModal = () => {
+    setIsServiceModalOpen(false);
+    setSelectedService(null);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -365,7 +378,7 @@ const App = () => {
                   <p className="text-sm text-gray-400 leading-relaxed">
                     {service.description}
                   </p>
-                  <ul className="text-xs text-gray-400 space-y-1">
+                  <ul className="text-xs text-gray-400 space-y-1 mb-4">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center">
                         <div className="w-2 h-2 bg-hive-gold mr-2 flex-shrink-0" style={{clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)'}}></div>
@@ -373,6 +386,18 @@ const App = () => {
                       </li>
                     ))}
                   </ul>
+                  
+                  {/* Learn More Button */}
+                  <div className="flex justify-center mt-auto">
+                    <motion.button
+                      onClick={() => openServiceModal(service)}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="text-xs px-4 py-2 bg-hive-gold/20 hover:bg-hive-gold/30 text-hive-gold border border-hive-gold/30 rounded-lg transition-colors"
+                    >
+                      Learn More
+                    </motion.button>
+                  </div>
                 </div>
               </motion.div>
               );
@@ -632,6 +657,13 @@ const App = () => {
           <LearnMoreModal onClose={() => setIsLearnMoreOpen(false)} />
         )}
       </AnimatePresence>
+      
+      {/* Service Detail Modal */}
+      <ServiceDetailModal 
+        isOpen={isServiceModalOpen}
+        onClose={closeServiceModal}
+        service={selectedService}
+      />
 
       {/* AI Chat Widget */}
       <AIChatWidget />

@@ -9,6 +9,15 @@
   animation: float 6s ease-in-out infinite;
 }
 
+/* Hexagon bullet for lists */
+.hexagon-bullet {
+  width: 8px;
+  height: 8px;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
 /* Service card hexagon borders */
 .service-card-hexagon {
   position: relative;
