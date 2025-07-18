@@ -129,7 +129,7 @@ const App = () => {
       title: "AI Power User",
       subtitle: "Fastest path to AI confidence",
       description: "Take your AI skills and abilities to the next level, creating a lasting competitive advantage for your business or career.",
-      features: ["Hands-on AI tools and implementations", "AI agents and automations", "Advanced AI skill building", "Tool-chaining, powerful workflows, advanced frameworks"],
+      features: ["Hands-on AI implementations", "AI agents and automations", "Advanced AI workflows", "New tools and tool-chaining"],
       icon: "🛠️",
       color: "from-honey-bright to-hive-gold-dark"
     },
