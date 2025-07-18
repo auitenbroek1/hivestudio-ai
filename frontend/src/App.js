@@ -120,7 +120,7 @@ const App = () => {
       title: "AI Level-Up",
       subtitle: "For teams new to practical AI",
       description: "Patient, educational guidance through practical AI fundamentals, frameworks, and tools that cut through the hype and focus on real business value.",
-      features: ["AI fundamentals for business", "Practical use cases", "Industry-specific applications", "Measurable outcomes"],
+      features: ["AI fundamentals for business", "Practical use cases", "Think and use AI like a pro", "Achieve measurable outcomes"],
       icon: "🎓",
       color: "from-hive-gold to-honey-bright"
     },
