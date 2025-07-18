@@ -129,7 +129,7 @@ const App = () => {
       title: "AI Power User",
       subtitle: "Fastest path to AI confidence",
       description: "Take your AI skills and abilities to the next level, creating a lasting competitive advantage for your business or career.",
-      features: ["Hands-on AI implementations", "AI agents and automations", "Advanced AI workflows", "New tools and tool-chaining"],
+      features: ["Hands-on AI implementations", "AI agents & automations", "Advanced AI workflows & frameworks", "New tools & tool-chaining"],
       icon: "🛠️",
       color: "from-honey-bright to-hive-gold-dark"
     },
@@ -138,7 +138,7 @@ const App = () => {
       title: "AI Discovery Workshop",
       subtitle: "Strategic AI roadmap development",
       description: "Identify high-value AI opportunities specific to your business through structured discovery sessions.",
-      features: ["AI opportunity assessment", "Custom solution planning", "Implementation roadmap", "Readiness audit and resource planning"],
+      features: ["AI opportunity assessment", "Custom solution planning", "Implementation roadmap", "Readiness audit & resource planning"],
       icon: "🔍",
       color: "from-hive-gold-dark to-charcoal-light"
     },
@@ -147,7 +147,7 @@ const App = () => {
       title: "AI Build Services",
       subtitle: "Direct AI solution implementation",
       description: "Custom AI solutions, advanced agent automation, and full implementation of high-value AI projects that deliver value from day one.",
-      features: ["Custom AI development", "End-to-end build and integration services", "Performance optimization", "Ongoing refinement and support"],
+      features: ["Custom AI development", "End-to-end build & integration services", "Performance optimization", "Ongoing refinement & support"],
       icon: "⚡",
       color: "from-charcoal-light to-hive-gold"
     }
