@@ -17,7 +17,7 @@ const ServiceDetailModal = ({ isOpen, onClose, service }) => {
         "Measurable improvements in productivity and decision-making",
         "Foundation for advanced AI adoption across your organization"
       ],
-      ideal: "Teams new to AI implementation, business leaders evaluating AI opportunities, organizations seeking practical AI education without technical complexity."
+      ideal: "Teams new to AI implementation, business or team leaders seeking practical AI education without technical complexity."
     },
     2: {
       title: "AI Power User",
