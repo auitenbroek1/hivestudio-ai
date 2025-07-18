@@ -147,7 +147,7 @@ const App = () => {
       title: "AI Build Services",
       subtitle: "Direct AI solution implementation",
       description: "Custom AI solutions, advanced agent automation, and full implementation of high-value AI projects that deliver value from day one.",
-      features: ["Custom AI development", "Integration services", "Performance optimization", "Ongoing support"],
+      features: ["Custom AI development", "End-to-end build and integration services", "Performance optimization", "Ongoing support"],
       icon: "⚡",
       color: "from-charcoal-light to-hive-gold"
     }
