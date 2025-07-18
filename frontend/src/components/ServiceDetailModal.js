@@ -81,13 +81,13 @@ const ServiceDetailModal = ({ isOpen, onClose, service }) => {
           
           {/* Modal */}
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto overflow-x-hidden"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -114,7 +114,7 @@ const ServiceDetailModal = ({ isOpen, onClose, service }) => {
               </div>
 
               {/* Content */}
-              <div className="p-6 space-y-6">
+              <div className="p-6 space-y-6 overflow-x-hidden">
                 {/* Description */}
                 <div>
                   <h3 className="text-lg font-semibold text-charcoal mb-3">Overview</h3>
@@ -161,7 +161,7 @@ const ServiceDetailModal = ({ isOpen, onClose, service }) => {
                     }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="hexagon-button px-6 py-3 honey-glow"
+                    className="hexagon-button px-6 py-3 honey-glow whitespace-nowrap"
                   >
                     Get Started
                   </motion.button>
@@ -169,7 +169,7 @@ const ServiceDetailModal = ({ isOpen, onClose, service }) => {
                     onClick={onClose}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
+                    className="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap"
                   >
                     Close
                   </motion.button>
