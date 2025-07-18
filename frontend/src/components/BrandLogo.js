@@ -23,27 +23,7 @@ const BrandLogo = ({ className = '', size = 'default', variant = 'horizontal', s
       transition={{ duration: 0.6 }}
     >
       {/* Hexagon with AI */}
-      <motion.div
-        className="relative"
-        whileHover={{ 
-          filter: "drop-shadow(0 0 8px #FFBF00)",
-          scale: 1.05,
-        }}
-        animate={{
-          filter: [
-            "brightness(1) saturate(1)",
-            "brightness(1.15) saturate(1.2)", 
-            "brightness(1.08) saturate(1.1)",
-            "brightness(1) saturate(1)"
-          ]
-        }}
-        transition={{ 
-          duration: 2.5,
-          ease: "easeInOut",
-          repeat: Infinity,
-          repeatType: "loop"
-        }}
-      >
+      <div className="relative">
         <img 
           src={aiHexagonLogo}
           alt="AI"
@@ -54,7 +34,7 @@ const BrandLogo = ({ className = '', size = 'default', variant = 'horizontal', s
             objectFit: 'contain'
           }}
         />
-      </motion.div>
+      </div>
 
       {/* HIVE STUDIO Text */}
       <motion.div
