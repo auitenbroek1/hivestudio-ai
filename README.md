@@ -1,4 +1,6 @@
-# Hive Studio AI Website
+# 🐝 Hive Studio AI Website
+
+**Current Version**: 1.1.0 - Professional Service Cards & Detailed Modals ✅
 
 Transform AI curiosity into competitive advantage with practical implementations that deliver measurable business results.
 
