@@ -182,8 +182,8 @@
 
 .animate-infinite-scroll-left {
   display: flex;
-  animation: infinite-scroll-left 20s linear infinite;
-  -webkit-animation: infinite-scroll-left 20s linear infinite;
+  animation: infinite-scroll-left 30s linear infinite;
+  -webkit-animation: infinite-scroll-left 30s linear infinite;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   will-change: transform;
@@ -191,8 +191,8 @@
 
 .animate-infinite-scroll-right {
   display: flex;
-  animation: infinite-scroll-right 20s linear infinite;
-  -webkit-animation: infinite-scroll-right 20s linear infinite;
+  animation: infinite-scroll-right 30s linear infinite;
+  -webkit-animation: infinite-scroll-right 30s linear infinite;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   will-change: transform;

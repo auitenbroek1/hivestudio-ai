@@ -27,9 +27,8 @@ const logos = [
   { src: require('../assets/logos/carousel-images/1pillar.png'), alt: 'Pillar' }
 ];
 
-// Split logos into two rows
-const firstRowLogos = logos.slice(0, 11);
-const secondRowLogos = logos.slice(11);
+// Create reversed array for bottom carousel
+const reversedLogos = [...logos].reverse();
 
 const LogoCarousel = () => {
   return (
@@ -52,11 +51,11 @@ const LogoCarousel = () => {
         </motion.div>
       </div>
 
-      {/* First Carousel - Left to Right */}
+      {/* First Carousel - All 22 logos Left to Right */}
       <div className="mb-8 relative overflow-hidden">
         <div className="flex animate-infinite-scroll-left">
-          {/* Double the logos for seamless infinite scroll */}
-          {[...firstRowLogos, ...firstRowLogos].map((logo, index) => (
+          {/* Double all 22 logos for seamless infinite scroll */}
+          {[...logos, ...logos].map((logo, index) => (
             <div
               key={`row1-${index}`}
               className="flex-shrink-0 w-32 h-20 flex items-center justify-center bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 p-4 cursor-pointer mx-5"
@@ -72,11 +71,11 @@ const LogoCarousel = () => {
         </div>
       </div>
 
-      {/* Second Carousel - Right to Left */}
+      {/* Second Carousel - All 22 logos in reverse, Right to Left */}
       <div className="relative overflow-hidden">
         <div className="flex animate-infinite-scroll-right">
-          {/* Double the logos for seamless infinite scroll */}
-          {[...secondRowLogos, ...secondRowLogos].map((logo, index) => (
+          {/* Double all 22 reversed logos for seamless infinite scroll */}
+          {[...reversedLogos, ...reversedLogos].map((logo, index) => (
             <div
               key={`row2-${index}`}
               className="flex-shrink-0 w-32 h-20 flex items-center justify-center bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 p-4 cursor-pointer mx-5"
