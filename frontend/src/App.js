@@ -620,10 +620,38 @@ const App = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4 text-hive-gold">Services</h4>
               <ul className="space-y-2 text-gray-300">
-                <li>AI Level-Up</li>
-                <li>AI Power User</li>
-                <li>AI Discovery Workshop</li>
-                <li>AI Build Services</li>
+                <li>
+                  <button 
+                    onClick={() => openServiceModal(services.find(s => s.id === 'ai-level-up'))}
+                    className="hover:text-hive-gold transition-colors cursor-pointer text-left"
+                  >
+                    AI Level-Up
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => openServiceModal(services.find(s => s.id === 'ai-power-user'))}
+                    className="hover:text-hive-gold transition-colors cursor-pointer text-left"
+                  >
+                    AI Power User
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => openServiceModal(services.find(s => s.id === 'ai-discovery'))}
+                    className="hover:text-hive-gold transition-colors cursor-pointer text-left"
+                  >
+                    AI Discovery Workshop
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => openServiceModal(services.find(s => s.id === 'ai-build'))}
+                    className="hover:text-hive-gold transition-colors cursor-pointer text-left"
+                  >
+                    AI Build Services
+                  </button>
+                </li>
               </ul>
             </div>
             <div>
