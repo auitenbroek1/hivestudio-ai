@@ -7,18 +7,12 @@ const FounderSection = () => {
     <div className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 py-20">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10 overflow-hidden">
-        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <pattern id="hexagon-pattern-founder" x="0" y="0" width="30" height="26" patternUnits="userSpaceOnUse">
-              {/* Properly proportioned hexagon */}
-              <polygon points="15,1 28,7.5 28,18.5 15,25 2,18.5 2,7.5" fill="none" stroke="#FFD700" strokeWidth="0.5"/>
-              {/* Add offset hexagon for tiling */}
-              <polygon points="0,7.5 13,14 13,25 0,31.5 -13,25 -13,14" fill="none" stroke="#FFD700" strokeWidth="0.5"/>
-              <polygon points="30,7.5 43,14 43,25 30,31.5 17,25 17,14" fill="none" stroke="#FFD700" strokeWidth="0.5"/>
-            </pattern>
-          </defs>
-          <rect width="200%" height="200%" fill="url(#hexagon-pattern-founder)" transform="translate(-50,-50)"/>
-        </svg>
+        <div className="absolute inset-0" style={{ 
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='52' viewBox='0 0 60 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23FFD700' stroke-width='1' opacity='1'%3E%3Cpath d='M30 0 L45 8.66 L45 26 L30 34.64 L15 26 L15 8.66 Z'/%3E%3Cpath d='M0 17.32 L15 26 L15 43.3 L0 52 L-15 43.3 L-15 26 Z'/%3E%3Cpath d='M60 17.32 L75 26 L75 43.3 L60 52 L45 43.3 L45 26 Z'/%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '60px 52px',
+          backgroundRepeat: 'repeat'
+        }}>
+        </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
