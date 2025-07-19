@@ -622,7 +622,7 @@ const App = () => {
               <ul className="space-y-2 text-gray-300">
                 <li>
                   <button 
-                    onClick={() => openServiceModal(services.find(s => s.id === 'ai-level-up'))}
+                    onClick={() => openServiceModal(services.find(s => s.id === 1))}
                     className="hover:text-hive-gold transition-colors cursor-pointer text-left"
                   >
                     AI Level-Up
@@ -630,7 +630,7 @@ const App = () => {
                 </li>
                 <li>
                   <button 
-                    onClick={() => openServiceModal(services.find(s => s.id === 'ai-power-user'))}
+                    onClick={() => openServiceModal(services.find(s => s.id === 2))}
                     className="hover:text-hive-gold transition-colors cursor-pointer text-left"
                   >
                     AI Power User
@@ -638,7 +638,7 @@ const App = () => {
                 </li>
                 <li>
                   <button 
-                    onClick={() => openServiceModal(services.find(s => s.id === 'ai-discovery'))}
+                    onClick={() => openServiceModal(services.find(s => s.id === 3))}
                     className="hover:text-hive-gold transition-colors cursor-pointer text-left"
                   >
                     AI Discovery Workshop
@@ -646,7 +646,7 @@ const App = () => {
                 </li>
                 <li>
                   <button 
-                    onClick={() => openServiceModal(services.find(s => s.id === 'ai-build'))}
+                    onClick={() => openServiceModal(services.find(s => s.id === 4))}
                     className="hover:text-hive-gold transition-colors cursor-pointer text-left"
                   >
                     AI Build Services
