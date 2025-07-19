@@ -54,18 +54,12 @@ const LogoCarousel = () => {
 
       {/* First Carousel - Left to Right */}
       <div className="mb-8 relative overflow-hidden">
-        <div className="flex animate-scroll-left-smooth">
-          {/* Triple the logos for seamless infinite scroll */}
-          {[...firstRowLogos, ...firstRowLogos, ...firstRowLogos].map((logo, index) => (
-            <motion.div
+        <div className="flex animate-infinite-scroll-left">
+          {/* Double the logos for seamless infinite scroll */}
+          {[...firstRowLogos, ...firstRowLogos].map((logo, index) => (
+            <div
               key={`row1-${index}`}
               className="flex-shrink-0 w-32 h-20 flex items-center justify-center bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 p-4 cursor-pointer mx-5"
-              whileHover={{ 
-                scale: 1.05,
-                y: -2,
-                boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
-              }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
             >
               <img
                 src={logo.src}
@@ -73,25 +67,19 @@ const LogoCarousel = () => {
                 className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                 loading="lazy"
               />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
 
       {/* Second Carousel - Right to Left */}
       <div className="relative overflow-hidden">
-        <div className="flex animate-scroll-right-smooth">
-          {/* Triple the logos for seamless infinite scroll */}
-          {[...secondRowLogos, ...secondRowLogos, ...secondRowLogos].map((logo, index) => (
-            <motion.div
+        <div className="flex animate-infinite-scroll-right">
+          {/* Double the logos for seamless infinite scroll */}
+          {[...secondRowLogos, ...secondRowLogos].map((logo, index) => (
+            <div
               key={`row2-${index}`}
               className="flex-shrink-0 w-32 h-20 flex items-center justify-center bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 p-4 cursor-pointer mx-5"
-              whileHover={{ 
-                scale: 1.05,
-                y: -2,
-                boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
-              }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
             >
               <img
                 src={logo.src}
@@ -99,7 +87,7 @@ const LogoCarousel = () => {
                 className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                 loading="lazy"
               />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
