@@ -585,14 +585,6 @@ const App = () => {
             >
               Start Your AI Journey
             </motion.button>
-            <motion.button
-              onClick={() => setIsLearnMoreOpen(true)}
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
-              whileTap={{ scale: 0.95 }}
-              className="border-2 border-hive-gold text-hive-gold px-8 py-4 rounded-full text-lg font-semibold hover:bg-hive-gold hover:text-charcoal transition-all duration-300"
-            >
-              Download AI Readiness Guide
-            </motion.button>
           </motion.div>
         </div>
       </motion.section>
