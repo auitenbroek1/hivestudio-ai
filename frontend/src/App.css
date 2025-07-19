@@ -143,17 +143,38 @@
   z-index: -1;
 }
 
-/* Swiper Logo Carousel Styles */
-.logo-carousel-swiper {
-  overflow: visible !important;
+/* Smooth Infinite Logo Carousel Animations */
+@keyframes scroll-left-smooth {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
 }
 
-.logo-carousel-swiper .swiper-wrapper {
-  transition-timing-function: linear !important;
+@keyframes scroll-right-smooth {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-.logo-carousel-swiper .swiper-slide {
-  width: auto !important;
-  flex-shrink: 0;
+.animate-scroll-left-smooth {
+  animation: scroll-left-smooth 45s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-right-smooth {
+  animation: scroll-right-smooth 45s linear infinite;
+  will-change: transform;
+}
+
+/* Pause animation on hover for better UX */
+.animate-scroll-left-smooth:hover,
+.animate-scroll-right-smooth:hover {
+  animation-play-state: paused;
 }
 
