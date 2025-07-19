@@ -143,3 +143,17 @@
   z-index: -1;
 }
 
+/* Swiper Logo Carousel Styles */
+.logo-carousel-swiper {
+  overflow: visible !important;
+}
+
+.logo-carousel-swiper .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+.logo-carousel-swiper .swiper-slide {
+  width: auto !important;
+  flex-shrink: 0;
+}
+

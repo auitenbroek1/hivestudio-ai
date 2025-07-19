@@ -8,6 +8,8 @@ import AIChatWidget from './components/AIChatWidget';
 import BrandLogo from './components/BrandLogo';
 import LearnMoreModal from './components/LearnMoreModal';
 import ServiceDetailModal from './components/ServiceDetailModal';
+import FounderSection from './components/FounderSection';
+import LogoCarousel from './components/LogoCarousel';
 import logoTransparent from './assets/logos/HiveStudio-logoTransparent.png';
 import './App.css';
 
@@ -463,6 +465,12 @@ const App = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Founder Section */}
+      <FounderSection />
+
+      {/* Logo Carousel */}
+      <LogoCarousel />
 
       {/* Testimonials Section */}
       <section id="testimonials" className="py-20">
