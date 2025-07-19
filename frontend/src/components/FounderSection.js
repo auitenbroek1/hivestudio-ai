@@ -6,12 +6,18 @@ const FounderSection = () => {
   return (
     <div className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 py-20">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <pattern id="hexagon-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <polygon points="10,1 19,6 19,14 10,19 1,14 1,6" fill="none" stroke="#FFD700" strokeWidth="0.5"/>
-          </pattern>
-          <rect width="100%" height="100%" fill="url(#hexagon-pattern)"/>
+      <div className="absolute inset-0 opacity-10 overflow-hidden">
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <pattern id="hexagon-pattern-founder" x="0" y="0" width="30" height="26" patternUnits="userSpaceOnUse">
+              {/* Properly proportioned hexagon */}
+              <polygon points="15,1 28,7.5 28,18.5 15,25 2,18.5 2,7.5" fill="none" stroke="#FFD700" strokeWidth="0.5"/>
+              {/* Add offset hexagon for tiling */}
+              <polygon points="0,7.5 13,14 13,25 0,31.5 -13,25 -13,14" fill="none" stroke="#FFD700" strokeWidth="0.5"/>
+              <polygon points="30,7.5 43,14 43,25 30,31.5 17,25 17,14" fill="none" stroke="#FFD700" strokeWidth="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="200%" height="200%" fill="url(#hexagon-pattern-founder)" transform="translate(-50,-50)"/>
         </svg>
       </div>
 
