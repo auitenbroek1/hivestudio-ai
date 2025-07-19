@@ -163,12 +163,12 @@
 }
 
 .animate-scroll-left-smooth {
-  animation: scroll-left-smooth 45s linear infinite;
+  animation: scroll-left-smooth 20s linear infinite;
   will-change: transform;
 }
 
 .animate-scroll-right-smooth {
-  animation: scroll-right-smooth 45s linear infinite;
+  animation: scroll-right-smooth 20s linear infinite;
   will-change: transform;
 }
 
