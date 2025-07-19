@@ -204,9 +204,4 @@
   -webkit-perspective: 1000px;
 }
 
-/* Pause animation on hover for better UX */
-.animate-scroll-left-smooth:hover,
-.animate-scroll-right-smooth:hover {
-  animation-play-state: paused;
-}
 
