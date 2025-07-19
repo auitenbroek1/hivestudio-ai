@@ -6,6 +6,8 @@
   /* iOS Safe Area Support */
   html {
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Account for fixed navigation height */
   }
   
   body {
