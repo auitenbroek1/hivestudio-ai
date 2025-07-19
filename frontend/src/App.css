@@ -153,6 +153,15 @@
   }
 }
 
+@-webkit-keyframes scroll-left-smooth {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-33.333%);
+  }
+}
+
 @keyframes scroll-right-smooth {
   0% {
     transform: translateX(-33.333%);
@@ -162,14 +171,37 @@
   }
 }
 
+@-webkit-keyframes scroll-right-smooth {
+  0% {
+    -webkit-transform: translateX(-33.333%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+
 .animate-scroll-left-smooth {
   animation: scroll-left-smooth 10s linear infinite;
   will-change: transform;
+  -webkit-animation: scroll-left-smooth 10s linear infinite;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
 }
 
 .animate-scroll-right-smooth {
   animation: scroll-right-smooth 10s linear infinite;
   will-change: transform;
+  -webkit-animation: scroll-right-smooth 10s linear infinite;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
 }
 
 /* Pause animation on hover for better UX */
