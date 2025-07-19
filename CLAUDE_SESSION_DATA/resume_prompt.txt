@@ -1,0 +1,20 @@
+RESUME PROMPT FOR NEXT SESSION:
+
+I'm continuing work on the Hive Studio AI website. I want to add a founder bio section and logo carousel to the "Why Choose Hive Studio" section.
+
+**What was completed:**
+- Analyzed project structure and current About section
+- Collected Aaron's bio text and professional photo
+- Identified 22 carousel logos at: /Users/aaronuitenbroek/projects/hivestudio-ai/frontend/src/assets/logos/carousel-images/
+- Determined grayscale logos need light background section to avoid white squares on dark theme
+- Created 3-step implementation plan
+
+**Data saved to:**
+/Users/aaronuitenbroek/projects/hivestudio-ai/CLAUDE_SESSION_DATA/
+- founder_bio_text.txt (bio content)
+- project_analysis.md (detailed analysis)
+- resume_prompt.txt (this file)
+
+**Next step:** Implement Step 1 - Save Aaron's photo and create FounderSection component
+
+**Quick task:** Go to Step 1 of the implementation plan in project_analysis.md and start with saving the photo and creating the founder section component.
