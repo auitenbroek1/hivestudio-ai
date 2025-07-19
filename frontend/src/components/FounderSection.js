@@ -75,7 +75,7 @@ const FounderSection = () => {
               <div className="relative p-8 space-y-6">
                 <div>
                   <h3 className="text-3xl font-bold text-white mb-2">Aaron Uitenbroek</h3>
-                  <p className="text-hive-gold text-xl font-semibold mb-4">Founder & CEO</p>
+                  <p className="text-hive-gold text-xl font-semibold mb-4">Founder & Chief AI Officer</p>
                 </div>
 
                 <div className="space-y-4 text-gray-300 leading-relaxed">
