@@ -11,7 +11,7 @@ const AIChatWidget = () => {
     {
       id: 1,
       type: 'bot',
-      content: "Hi! I'm your AI assistant from Hive Studio. I'm here to help you understand how connected intelligence can transform your business. What would you like to know?",
+      content: "Hi! I'm your AI assistant from Hive Studio. How can I help you today?",
       timestamp: new Date()
     }
   ]);
@@ -188,7 +188,7 @@ const AIChatWidget = () => {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Ask about connected AI..."
+                  placeholder="Ask about our AI services..."
                   className="flex-1 px-3 py-2 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
                 />
                 <motion.button
