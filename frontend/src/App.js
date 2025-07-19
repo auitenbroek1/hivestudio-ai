@@ -418,8 +418,8 @@ const App = () => {
             transition={{ duration: 0.8 }}
             className="text-center space-y-8"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text">
-              Why Choose Hive Studio?
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+              <span className="text-white">Why Choose</span> <span className="gradient-text">Hive Studio?</span>
             </h2>
             <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
               We bridge the gap between AI potential and business reality. Our approach combines deep technical expertise with practical business acumen.
@@ -482,8 +482,8 @@ const App = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-6">
-              Client Success Stories
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+              <span className="text-charcoal">Client</span> <span className="gradient-text">Success Stories</span>
             </h2>
             <p className="text-lg text-charcoal-light max-w-3xl mx-auto">
               Measurable results that exceed expectations

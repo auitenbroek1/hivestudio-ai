@@ -41,7 +41,7 @@ const LogoCarousel = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Trusted by Industry <span className="text-hive-gold">Leaders</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
