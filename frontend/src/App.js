@@ -211,24 +211,13 @@ const App = () => {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed w-full z-40 transition-all duration-500 relative overflow-hidden ${
+        className={`fixed w-full z-40 transition-all duration-500 ${
           isScrolled 
             ? 'bg-white/95 backdrop-blur-md shadow-hexagon' 
             : 'bg-transparent'
         }`}
       >
-        {/* Honeycomb Background Pattern */}
-        <div className={`absolute inset-0 overflow-hidden transition-opacity duration-500 ${
-          isScrolled ? 'opacity-5' : 'opacity-0'
-        }`}>
-          <div className="absolute inset-0" style={{ 
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='52' viewBox='0 0 60 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23FFD700' stroke-width='1' opacity='1'%3E%3Cpath d='M30 0 L45 8.66 L45 26 L30 34.64 L15 26 L15 8.66 Z'/%3E%3Cpath d='M0 17.32 L15 26 L15 43.3 L0 52 L-15 43.3 L-15 26 Z'/%3E%3Cpath d='M60 17.32 L75 26 L75 43.3 L60 52 L45 43.3 L45 26 Z'/%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '60px 52px',
-            backgroundRepeat: 'repeat'
-          }}>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <motion.div 
               whileHover={!device.isMobileDevice ? { scale: 1.05 } : {}}
