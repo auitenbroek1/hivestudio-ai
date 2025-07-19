@@ -591,6 +591,15 @@ const App = () => {
 
       {/* Footer */}
       <footer className="bg-charcoal text-white py-12 relative overflow-hidden">
+        {/* Honeycomb Background Pattern */}
+        <div className="absolute inset-0 opacity-10 overflow-hidden">
+          <div className="absolute inset-0" style={{ 
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='52' viewBox='0 0 60 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23FFD700' stroke-width='1' opacity='1'%3E%3Cpath d='M30 0 L45 8.66 L45 26 L30 34.64 L15 26 L15 8.66 Z'/%3E%3Cpath d='M0 17.32 L15 26 L15 43.3 L0 52 L-15 43.3 L-15 26 Z'/%3E%3Cpath d='M60 17.32 L75 26 L75 43.3 L60 52 L45 43.3 L45 26 Z'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '60px 52px',
+            backgroundRepeat: 'repeat'
+          }}>
+          </div>
+        </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
