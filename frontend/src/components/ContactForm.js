@@ -105,7 +105,7 @@ const ContactForm = ({ onClose }) => {
           {/* Header */}
           <div className={`${device.isMobileDevice ? 'mb-6' : 'mb-8'}`}>
             <h2 className={`${device.isMobileDevice ? 'text-xl' : 'text-2xl'} font-bold gradient-text mb-2`}>
-              Get Started with AI
+              Start with Hive Studio AI
             </h2>
           </div>
 
