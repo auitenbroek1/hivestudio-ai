@@ -157,22 +157,22 @@ const App = () => {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      title: "CEO, Midwest Manufacturing",
+      name: "S. Johnson",
+      title: "EVP, Manufacturing",
       content: "Hive Studio transformed our understanding of AI from curiosity to competitive advantage. We're now saving 15+ hours weekly on routine tasks.",
       rating: 5,
       avatar: "SJ"
     },
     {
-      name: "Mike Chen",
-      title: "Operations Director, AgTech Solutions", 
+      name: "Mike T.",
+      title: "Operations Director, AgTech", 
       content: "Finally, an AI consultant who delivers real results instead of impressive demos. Our efficiency gains are measurable and significant.",
       rating: 5,
-      avatar: "MC"
+      avatar: "MT"
     },
     {
-      name: "Lisa Rodriguez",
-      title: "Founder, Central Iowa Logistics",
+      name: "Lisa R.",
+      title: "Founder, Central Iowa SMB",
       content: "Aaron's practical approach to AI implementation exceeded our expectations. We're seeing immediate ROI and excited about our new capabilities.",
       rating: 5,
       avatar: "LR"
