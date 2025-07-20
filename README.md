@@ -1,6 +1,6 @@
 # 🐝 Hive Studio AI Website
 
-**Current Version**: 1.3.0 - UI Polish & Navigation Improvements ✅
+**Current Version**: 1.3.1 - Content & SEO Optimization ✅
 
 Transform AI curiosity into competitive advantage with practical implementations that deliver measurable business results.
 
@@ -19,6 +19,8 @@ Hive Studio AI is a modern, responsive React website showcasing AI consulting se
 - **Interactive Footer**: Clickable service links that open respective service modals
 - **AI Chat Widget**: Interactive assistant with custom welcome message and modern send icon
 - **Honeycomb Patterns**: Subtle background textures in founder and footer sections
+- **Clickable Logo**: Navigation logo that reloads page when clicked
+- **SEO Optimized**: Updated tagline "Practical AI Solutions That Deliver Real ROI"
 - **Responsive Design**: Optimized for all devices with proper scroll behavior
 - **Performance Optimized**: Fast loading with smooth 60fps animations
 
