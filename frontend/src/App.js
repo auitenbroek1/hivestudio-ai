@@ -166,7 +166,7 @@ const App = () => {
     {
       name: "Mike T.",
       title: "Operations Director, AgTech", 
-      content: "Finally, an AI consultant who delivers real results instead of impressive demos. Our efficiency gains are measurable and significant.",
+      content: "Not only did we get concrete deliverables that we are using to get real results, we now have a new mindset and perspective that allows us to see AI and automation opportunities around us every day.",
       rating: 5,
       avatar: "MT"
     },
