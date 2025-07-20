@@ -222,11 +222,17 @@ const App = () => {
             <motion.div 
               whileHover={!device.isMobileDevice ? { scale: 1.05 } : {}}
             >
-              <BrandLogo 
-                variant="horizontal" 
-                size="large" 
-                style={{ maxHeight: '120px' }}
-              />
+              <a 
+                href="/" 
+                className="cursor-pointer"
+                onClick={() => window.location.reload()}
+              >
+                <BrandLogo 
+                  variant="horizontal" 
+                  size="large" 
+                  style={{ maxHeight: '120px' }}
+                />
+              </a>
             </motion.div>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#services" className="text-charcoal hover:text-hive-gold transition-colors">Services</a>
