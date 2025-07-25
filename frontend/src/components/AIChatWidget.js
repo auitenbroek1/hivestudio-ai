@@ -24,7 +24,7 @@ const AIChatWidget = () => {
     {
       id: 1,
       type: 'bot',
-      content: "Hi! I'm your AI assistant from Hive Studio. How can I help you today?",
+      content: "Hello. I'm Aairon, your helpful AI Assistant from Hive Studio AI. How may I assist you today?",
       timestamp: new Date()
     }
   ]);
