@@ -35,9 +35,9 @@ The Hive Studio AI website now features a fully integrated AI chat widget powere
 
 ### Webhook Configuration
 - **n8n Cloud URL**: `https://i10aaron.app.n8n.cloud/`
-- **Webhook ID**: `37666134-bbbb-4815-ac84-d8d8ccbd0c9d`
-- **Test URL**: `https://i10aaron.app.n8n.cloud/webhook-test/[id]`
-- **Production URL**: `https://i10aaron.app.n8n.cloud/webhook/[id]`
+- **Webhook ID**: `0df49951-9ed4-4765-807d-5d7b384748ae` (from HiveStudioAI workflow)
+- **Test URL**: `https://i10aaron.app.n8n.cloud/webhook-test/0df49951-9ed4-4765-807d-5d7b384748ae`
+- **Production URL**: `https://i10aaron.app.n8n.cloud/webhook/0df49951-9ed4-4765-807d-5d7b384748ae`
 
 ### Environment Variables
 ```bash
