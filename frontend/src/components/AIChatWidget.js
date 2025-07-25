@@ -223,11 +223,11 @@ const AIChatWidget = () => {
                     : 'bg-red-400'
                 }`}></div>
                 <span className="text-white font-semibold">
-                  {isTyping ? 'Hive Assistant is typing...' : 'Hive Assistant'}
+                  {isTyping ? 'Aairon is typing...' : 'Aairon'}
                 </span>
               </div>
               <div className="text-xs text-gray-400">
-                {isOnline ? 'Connected AI' : 'Offline'}
+                {isOnline ? 'Hive Studio AI Assistant' : 'Offline'}
               </div>
             </div>
 
