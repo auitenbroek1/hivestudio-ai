@@ -212,7 +212,7 @@ const AIChatWidget = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ type: "spring", damping: 20, stiffness: 300 }}
-            className="fixed bottom-24 right-6 w-80 h-96 bg-charcoal/95 backdrop-blur-md rounded-2xl shadow-hexagon z-40 flex flex-col border border-hive-gold/30"
+            className="fixed bottom-20 md:bottom-24 right-4 md:right-6 w-[calc(100vw-2rem)] md:w-96 max-w-sm md:max-w-none h-[75vh] md:h-[32rem] max-h-[32rem] bg-charcoal/95 backdrop-blur-md rounded-2xl shadow-hexagon z-40 flex flex-col border border-hive-gold/30"
           >
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-hive-gold/30">
