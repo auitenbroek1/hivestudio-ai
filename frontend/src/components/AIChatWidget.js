@@ -4,7 +4,7 @@ import { useDevice } from '../contexts/DeviceContext';
 import BeeIcon from './BeeIcon';
 
 // Configuration - Use environment variable for webhook URL in production  
-const N8N_WEBHOOK_URL = process.env.REACT_APP_N8N_WEBHOOK_URL || 'https://i10aaron.app.n8n.cloud/webhook/0df49951-9ed4-4765-807d-5d7b384748ae';
+const N8N_WEBHOOK_URL = process.env.REACT_APP_N8N_WEBHOOK_URL || 'https://i10aaron.app.n8n.cloud/webhook/37666134-bbbb-4815-ac84-d8d8ccbd0c9d';
 
 // Fallback responses for when n8n is unavailable
 const FALLBACK_RESPONSES = {
