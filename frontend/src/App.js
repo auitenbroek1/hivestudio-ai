@@ -158,7 +158,7 @@ const App = () => {
   const testimonials = [
     {
       name: "S. Johnson",
-      title: "EVP, Manufacturing",
+      title: "VP, Investments",
       content: "Hive Studio transformed our understanding of AI from curiosity to competitive advantage. We're now saving 15+ hours weekly on routine tasks.",
       rating: 5,
       avatar: "SJ"
