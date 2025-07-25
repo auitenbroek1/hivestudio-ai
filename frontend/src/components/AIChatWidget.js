@@ -246,14 +246,6 @@ const AIChatWidget = () => {
                       : 'bg-charcoal-light text-white border border-hive-gold/20'
                   }`}>
                     <p className="text-sm">{message.content}</p>
-                    <p className={`text-xs mt-1 ${
-                      message.type === 'user' ? 'text-charcoal/70' : 'text-gray-500'
-                    }`}>
-                      {message.timestamp.toLocaleTimeString([], { 
-                        hour: '2-digit', 
-                        minute: '2-digit' 
-                      })}
-                    </p>
                   </div>
                 </motion.div>
               ))}
