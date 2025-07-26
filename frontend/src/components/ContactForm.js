@@ -71,9 +71,26 @@ const ContactForm = ({ onClose }) => {
     setSubmitStatus(''); // Clear any previous status
     
     try {
-      // Send to n8n webhook which handles GHL integration  
-      // Generate or use email as User_Id for the workflow
-      const userId = formData.email || `user_${Date.now()}`;
+      // Generate GHL-compatible User_Id (20-char alphanumeric)
+      const generateGHLStyleId = (email) => {
+        // Create deterministic ID based on email to avoid duplicates
+        const chars = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789'; // Base58 (no confusing chars)
+        let hash = 0;
+        for (let i = 0; i < email.length; i++) {
+          hash = ((hash << 5) - hash + email.charCodeAt(i)) & 0xffffffff;
+        }
+        
+        let result = '';
+        let num = Math.abs(hash);
+        for (let i = 0; i < 20; i++) {
+          result += chars[num % chars.length];
+          num = Math.floor(num / chars.length);
+          if (num === 0) num = Math.abs(hash * (i + 1)); // Rehash for more randomness
+        }
+        return result;
+      };
+
+      const userId = generateGHLStyleId(formData.email || `temp_${Date.now()}`);
       const n8nWebhookUrl = process.env.REACT_APP_N8N_CONTACT_WEBHOOK || 
         `https://i10aaron.app.n8n.cloud/webhook/0df49951-9ed4-4765-807d-5d7b384748ae?User_Id=${encodeURIComponent(userId)}`;
       
