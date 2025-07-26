@@ -71,29 +71,32 @@ const ContactForm = ({ onClose }) => {
     setSubmitStatus(''); // Clear any previous status
     
     try {
-      // Send to n8n webhook which handles GHL integration
+      // Send to n8n webhook which handles GHL integration  
+      // Generate or use email as User_Id for the workflow
+      const userId = formData.email || `user_${Date.now()}`;
       const n8nWebhookUrl = process.env.REACT_APP_N8N_CONTACT_WEBHOOK || 
-        'https://i10aaron.app.n8n.cloud/webhook/7430cdc6-3ffb-4a76-9ba7-4fe04a183265';
+        `https://i10aaron.app.n8n.cloud/webhook/7430cdc6-3ffb-4a76-9ba7-4fe04a183265?User_Id=${encodeURIComponent(userId)}`;
       
       const payload = {
-        // Standard fields from old form
-        fullName: formData.name,
+        // Match expected structure from n8n workflow
+        name: formData.name,
         email: formData.email,
         phone: formData.phone,
         companyWebsite: normalizeUrl(formData.companyWebsite),
         message: formData.message,
         services: formData.services.join(', '), // Convert array to comma-separated string
         
-        // Additional metadata that might be needed
-        source: 'hivestudio.ai',
-        formId: 'contact-form',
-        timestamp: new Date().toISOString(),
-        
-        // GHL-specific fields if needed
+        // Additional fields for compatibility
+        fullName: formData.name,
         userFullName: formData.name,
         userEmail: formData.email,
         userPhone: formData.phone,
-        website: normalizeUrl(formData.companyWebsite) // Alternative field name for GHL
+        website: normalizeUrl(formData.companyWebsite),
+        
+        // Metadata
+        source: 'hivestudio.ai',
+        formId: 'contact-form',
+        timestamp: new Date().toISOString()
       };
 
       console.log('Submitting payload:', payload);
