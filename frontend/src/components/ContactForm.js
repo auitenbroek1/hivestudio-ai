@@ -10,7 +10,7 @@ const ContactForm = ({ onClose }) => {
     phone: '',
     companyWebsite: '',
     message: '',
-    service: ''
+    services: []
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
@@ -19,7 +19,8 @@ const ContactForm = ({ onClose }) => {
     'AI Level-Up',
     'AI Power User', 
     'AI Discovery Workshop',
-    'AI Build Services'
+    'AI Build Services',
+    'Enterprise AI Strategy'
   ];
 
   // Normalize URL to ensure consistent format
@@ -55,9 +56,19 @@ const ContactForm = ({ onClose }) => {
     });
   };
 
+  const handleServiceChange = (service) => {
+    setFormData(prev => ({
+      ...prev,
+      services: prev.services.includes(service)
+        ? prev.services.filter(s => s !== service)
+        : [...prev.services, service]
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(''); // Clear any previous status
     
     try {
       // Send to n8n webhook which handles GHL integration
@@ -71,7 +82,7 @@ const ContactForm = ({ onClose }) => {
         phone: formData.phone,
         companyWebsite: normalizeUrl(formData.companyWebsite),
         message: formData.message,
-        service: formData.service,
+        services: formData.services.join(', '), // Convert array to comma-separated string
         
         // Additional metadata that might be needed
         source: 'hivestudio.ai',
@@ -85,6 +96,9 @@ const ContactForm = ({ onClose }) => {
         website: normalizeUrl(formData.companyWebsite) // Alternative field name for GHL
       };
 
+      console.log('Submitting payload:', payload);
+      console.log('Webhook URL:', n8nWebhookUrl);
+
       const response = await fetch(n8nWebhookUrl, {
         method: 'POST',
         headers: {
@@ -93,14 +107,22 @@ const ContactForm = ({ onClose }) => {
         body: JSON.stringify(payload)
       });
 
+      console.log('Response status:', response.status);
+      console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        const errorText = await response.text();
+        console.error('Response error:', errorText);
+        throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
       }
 
-      const result = await response.json();
+      const result = await response.json().catch(() => ({
+        message: 'Success (no JSON response)'
+      }));
       console.log('Form submission successful:', result);
       
       setSubmitStatus('success');
+      setIsSubmitting(false);
       
       // Clear form
       setFormData({
@@ -109,7 +131,7 @@ const ContactForm = ({ onClose }) => {
         phone: '',
         companyWebsite: '',
         message: '',
-        service: ''
+        services: []
       });
       
       // Close modal after 2 seconds
@@ -118,6 +140,11 @@ const ContactForm = ({ onClose }) => {
       }, 2000);
     } catch (error) {
       console.error('Form submission error:', error);
+      console.error('Error details:', {
+        message: error.message,
+        stack: error.stack,
+        formData: formData
+      });
       setSubmitStatus('error');
       setIsSubmitting(false);
     }
@@ -251,22 +278,41 @@ const ContactForm = ({ onClose }) => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-white mb-2">
-              Service Interest
+            <label className="block text-sm font-medium text-white mb-3">
+              Service Interest (select all that apply)
             </label>
-            <select
-              name="service"
-              value={formData.service}
-              onChange={handleChange}
-              className="w-full min-w-0 px-4 py-3 bg-charcoal-light border border-hive-gold/30 rounded-lg text-white focus:outline-none focus:border-hive-gold focus:ring-1 focus:ring-hive-gold transition-colors"
-            >
-              <option value="">Select a service</option>
+            <div className="space-y-3">
               {services.map((service) => (
-                <option key={service} value={service}>
-                  {service}
-                </option>
+                <label key={service} className="flex items-center cursor-pointer group">
+                  <div className="relative">
+                    <input
+                      type="checkbox"
+                      checked={formData.services.includes(service)}
+                      onChange={() => handleServiceChange(service)}
+                      className="sr-only"
+                    />
+                    <div className={`w-5 h-5 rounded border-2 transition-all duration-200 ${
+                      formData.services.includes(service)
+                        ? 'bg-hive-gold border-hive-gold'
+                        : 'border-hive-gold/30 group-hover:border-hive-gold/60'
+                    }`}>
+                      {formData.services.includes(service) && (
+                        <svg className="w-3 h-3 text-charcoal absolute top-0.5 left-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      )}
+                    </div>
+                  </div>
+                  <span className={`ml-3 text-sm transition-colors duration-200 ${
+                    formData.services.includes(service) 
+                      ? 'text-white' 
+                      : 'text-gray-300 group-hover:text-white'
+                  }`}>
+                    {service}
+                  </span>
+                </label>
               ))}
-            </select>
+            </div>
           </div>
 
           <div>
