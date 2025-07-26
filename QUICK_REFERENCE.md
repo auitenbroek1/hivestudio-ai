@@ -7,22 +7,27 @@
 ## 📋 Current Working Configuration
 
 ### n8n Setup
-- **Workflow Name**: HiveStudioAI
+- **Workflow Name**: HiveStudioAI (Updated)
 - **URL**: https://i10aaron.app.n8n.cloud/
-- **Webhook ID**: `0df49951-9ed4-4765-807d-5d7b384748ae`
+- **Chat Webhook ID**: `37666134-bbbb-4815-ac84-d8d8ccbd0c9d` (LangChain Chat Trigger)
+- **Contact Form Webhook ID**: `7430cdc6-3ffb-4a76-9ba7-4fe04a183265`
 - **Status**: ✅ Active and processing messages
 - **Bot Persona**: AAIRON (Hive Studio AI assistant)
 
-### Production Webhook
+### Production Webhooks
 ```
-https://i10aaron.app.n8n.cloud/webhook/0df49951-9ed4-4765-807d-5d7b384748ae
+Chat: https://i10aaron.app.n8n.cloud/webhook/37666134-bbbb-4815-ac84-d8d8ccbd0c9d
+Contact Form: https://i10aaron.app.n8n.cloud/webhook/7430cdc6-3ffb-4a76-9ba7-4fe04a183265
 ```
 
 ### Website Integration
 - **Live Site**: https://hivestudio.ai
-- **Chat Widget**: Bottom-right bee icon
-- **File**: `/frontend/src/components/AIChatWidget.js`
-- **Status**: ✅ Fully operational with enhanced size
+- **Chat Widget**: Bottom-right bee icon (updated webhook)
+- **Contact Form**: Go High Level embed integration
+- **Files**: 
+  - `/frontend/src/components/AIChatWidget.js` (updated webhook)
+  - `/frontend/src/components/ContactForm.js` (Go High Level form)
+- **Status**: ✅ Fully operational with Go High Level integration
 
 ---
 
@@ -93,11 +98,12 @@ https://i10aaron.app.n8n.cloud/webhook/0df49951-9ed4-4765-807d-5d7b384748ae
 - `/PRODUCTION_DEPLOYMENT_CHECKLIST.md` - Step-by-step process
 - `/Downloads/HiveStudioAI.json` - n8n workflow reference
 
-### Last Known Good State
-- **Commit**: Latest with enhanced chat window
-- **n8n Status**: Active with successful executions
-- **Webhook**: Production URL working
-- **Integration**: Full AI responses confirmed
+### Last Known Good State  
+- **Commit**: Latest with Go High Level integration and updated webhook
+- **n8n Status**: Active with updated webhook IDs
+- **Chat Webhook**: `37666134-bbbb-4815-ac84-d8d8ccbd0c9d` (LangChain trigger)
+- **Contact Form**: Go High Level inline embed (`VUPazZde6LSJoFI3wogV`)
+- **Integration**: Full AI responses + Go High Level lead capture
 
 ---
 
